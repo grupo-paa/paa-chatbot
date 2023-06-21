@@ -24,16 +24,15 @@ def login():
   hashed = bcrypt.hashpw(password, user['salt'])
   if(not user['password'] == hashed):
     return {"message": "Username or password invalid"},403
-  user = {}
   try:
     user["token"] = jwt.encode(
-      {"user_id": 1},
+      {"user_id": str(user["_id"])},
       app.config["SECRET_KEY"],
       algorithm="HS256"
     )
     return {
       "message": "Successfully fetched auth token",
-      "data": user
+      "data": user["token"]
     }
   except Exception as e:
     return {
