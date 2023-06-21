@@ -7,7 +7,7 @@ import jwt
 import os
 import bcrypt
 
-client = MongoClient("mongodb://admin:admin@localhost:27017/")
+client = MongoClient("mongodb+srv://admin:admin@paa-chatbot.tp4urq2.mongodb.net/?retryWrites=true&w=majority")
 
 db = client.flask_db
 users = db.users
@@ -29,7 +29,6 @@ def post_data(current_user):
 
 @app.route('/login', methods=['POST'])
 def login():
-  user = users.insert_one({"user":"teste"})
   content = request.json
   if not content:
     return {
@@ -37,9 +36,11 @@ def login():
       "data": None,
       "error": "Bad request"
     }, 400
-  is_validated = content.get("user") == "admin" and content.get("password") == "2134"
-  if not is_validated:
-    return dict(message='Invalid data', data=None, error=is_validated), 400
+  password = content['password'].encode('utf-8')
+  user = users.find_one({"user":content['user']})
+  hashed = bcrypt.hashpw(password, user['salt'])
+  if(not user['password'] == hashed):
+    return {"message": "Username or password invalid"},403
   user = {}
   try:
     user["token"] = jwt.encode(
@@ -67,10 +68,10 @@ def register():
       "error": "Bad request"
     }, 400
   password = content['password'].encode('utf-8')
-  hashed = bcrypt.hashpw(password, bcrypt.gensalt(10))
-  print(hashed)
+  salt = bcrypt.gensalt(10)
+  hashed = bcrypt.hashpw(password, salt)
   try:
-    users.insert_one({'user': content['user'], 'password': '2134'})
+    users.insert_one({'user': content['user'], 'password': hashed, 'salt': salt})
     return {
       "message": "User registered",
       "data": None,
