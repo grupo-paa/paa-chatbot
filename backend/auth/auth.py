@@ -30,9 +30,10 @@ def login():
       app.config["SECRET_KEY"],
       algorithm="HS256"
     )
+
     return {
       "message": "Successfully fetched auth token",
-      "data": user["token"]
+      "data": {"token": user["token"], "nickname": user["nickname"]}
     }
   except Exception as e:
     return {
@@ -53,7 +54,7 @@ def register():
   salt = bcrypt.gensalt(10)
   hashed = bcrypt.hashpw(password, salt)
   try:
-    users.insert_one({'user': content['user'], 'password': hashed, 'salt': salt})
+    users.insert_one({'user': content['user'], 'password': hashed, 'salt': salt, 'messages': [], 'nickname': content['nickname']})
     return {
       "message": "User registered",
       "data": None,
