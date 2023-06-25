@@ -12,7 +12,7 @@
     import Messages from '../components/MessagesBox.vue'
     import Textbox from '../components/TextBox.vue'
     import type {Message} from '../interfaces/message'
-    import { onDeactivated, onMounted, ref } from 'vue';
+    import { onMounted, ref } from 'vue';
     import type {Ref} from 'vue'
     import axios from 'axios';
 
@@ -22,8 +22,8 @@
         messages.value = [...messages.value, {sender: 'user', content: text}] 
         try {
         let res = await axios({
-            method:"post",
-            url: "http://localhost:5000/message",
+            method:'post',
+            url: 'http://localhost:5000/message',
             data: {message:text}
         });
         let receivedMessage: Message = res.data

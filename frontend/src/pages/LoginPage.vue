@@ -10,6 +10,7 @@
             <q-input 
                 v-model="password" 
                 placeholder="Senha"
+                type="password"
                 lazy-rules
                 :rules="[val => val && val.length > 0 || 'Por favor digite uma senha']"
             />
@@ -20,10 +21,38 @@
 
 <script setup lang="ts">
 import {ref} from 'vue'
-const user = ref()
-const password = ref()
+import { api } from 'boot/axios'
+import { useQuasar } from 'quasar'
+import {Cookies} from 'quasar'
+import { useRouter } from 'vue-router'
+const $q = useQuasar()
+
+const user = ref('')
+const password = ref('')
+const router = useRouter()
+
 const onSubmit = () => {
-    console.log(user.value, password.value)
+    const json = JSON.stringify({user: user.value, password: password.value})
+    api.post('/auth/login', json, {
+        headers: {
+            // Overwrite Axios's automatically set Content-Type
+            'Content-Type': 'application/json'
+        }
+    })
+    .then((res) => {
+        Cookies.set('user_info', JSON.stringify(res.data.data))
+        router.push({
+            path:'/'
+        })
+    })
+    .catch(()=>{
+        $q.notify({
+            color: 'negative',
+            position: 'top',
+            message: 'Usuario ou senha invalidos',
+            icon: 'report_problem'
+        })
+    })
 }
 const onReset = () => {
     user.value = null
