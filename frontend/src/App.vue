@@ -1,11 +1,7 @@
-<script setup lang="ts">
-import { RouterView } from 'vue-router'
-</script>
-
 <template>
-  <RouterView class="grid h-screen place-items-center "/>
+  <router-view />
 </template>
 
-<style scoped>
-  
-</style>
+<script setup lang="ts">
+
+</script>
