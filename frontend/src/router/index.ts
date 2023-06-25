@@ -37,10 +37,16 @@ export default route(function (/* { store, ssrContext } */) {
   Router.beforeEach(async (to) => {
     const publicPages = ['/login'];
     const authRequired = !publicPages.includes(to.path);
-    const auth = api.post('/auth/validade', JSON.stringify({token: JSON.parse(Cookies.get('user_info')).token} ));
-  
-    if (authRequired && !auth.user) {
-        auth.returnUrl = to.fullPath;
+    let auth = false;
+    if(Cookies.has('user_info')){
+      const user_info: Record<string,string> = Cookies.get('user_info')
+      console.log(user_info.token)
+      if(user_info.token){
+        const res = await api.get('/auth/validate', {headers: {Authorization: `Bearer ${user_info.token}`}} );
+        auth = res.status == 200
+      }
+    }
+    if (authRequired && !auth) {
         return '/login';
     }
   });
