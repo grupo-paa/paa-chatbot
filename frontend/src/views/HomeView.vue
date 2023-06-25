@@ -1,10 +1,5 @@
 <template>
   <main>
-<<<<<<< HEAD
-    <Messages :messages="messages"/>
-    <h2 class="text-3xl underline">teste 34</h2>
-    <Textbox @send-message="(text)=>{sendMessage(text)}"/>
-=======
     <div class="chatbox">
       <!-- <div class="b"> -->
         <section class="section-msgs bottom-msg">
@@ -16,7 +11,6 @@
 
       <!-- </div> -->
     </div>
->>>>>>> 11c551cbd29b7b14ae7731c5bf68c955e4833a58
   </main>
 </template>
 
@@ -50,9 +44,6 @@
   })
 </script>
 
-<<<<<<< HEAD
-<style></style>
-=======
 <style>
   .chatbox {
     margin: auto;
@@ -99,8 +90,4 @@
     position: relative;
   } */
 
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
 </style>
->>>>>>> 11c551cbd29b7b14ae7731c5bf68c955e4833a58
