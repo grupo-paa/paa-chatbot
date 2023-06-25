@@ -1,10 +1,8 @@
 <template>
     <div class="column justify-between">
-        <q-scroll-area style="height: 400px; min-height:400px">
-            <div class="bg-positive border-up">
-                <Messages :messages="messages"/>
-            </div>
-        </q-scroll-area>
+        <div class="bg-positive border-up">
+            <Messages :messages="messages"/>
+        </div>
         <div class="border-down col-4 bg-grey-2 q-py-sm textbox">
           <Textbox @send-message="(text)=>{sendMessage(text)}"/>
         </div>
