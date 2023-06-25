@@ -5,6 +5,8 @@ import {
   createWebHashHistory,
   createWebHistory,
 } from 'vue-router';
+import { api } from 'boot/axios';
+import { Cookies } from 'quasar';
 
 import routes from './routes';
 
@@ -32,5 +34,17 @@ export default route(function (/* { store, ssrContext } */) {
     history: createHistory(process.env.VUE_ROUTER_BASE),
   });
 
-  return Router;
+  Router.beforeEach(async (to) => {
+    const publicPages = ['/login'];
+    const authRequired = !publicPages.includes(to.path);
+    const auth = api.post('/auth/validade', JSON.stringify({token: JSON.parse(Cookies.get('user_info')).token} ));
+  
+    if (authRequired && !auth.user) {
+        auth.returnUrl = to.fullPath;
+        return '/login';
+    }
+  });
+  
+  return Router;  
 });
+
