@@ -1,6 +1,8 @@
 <template>
-    <textarea v-model="text"></textarea>
-    <button @click="emit('sendMessage', text)">Enviar</button>
+    <div class="bg-slate-500 flex">
+        <textarea v-model="text"></textarea>
+        <button @click="emit('sendMessage', text)">Enviar</button>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -36,8 +38,4 @@
     button:hover {
         cursor: pointer;
     }
-
-    @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
 </style>
