@@ -1,17 +1,17 @@
 <template>
-  <main>
-    <div class="chatbox">
+  <div>
+    <div class="m-auto w-1/2 chatbox flex flex-col justify-between h-1/2 border-2 p-5 rounded-lg">
       <!-- <div class="b"> -->
-        <section class="section-msgs bottom-msg">
+        <div class="">
           <Messages :messages="messages"/>
-        </section>
-        <section class="section-input bottom-box">
+        </div>
+        <div class="">
           <Textbox @send-message="(text)=>{sendMessage(text)}"/>
-        </section>
-
+        </div>
+  
       <!-- </div> -->
     </div>
-  </main>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -44,50 +44,6 @@
   })
 </script>
 
-<style>
-  .chatbox {
-    margin: auto;
-    /* margin-left: auto; */
-    background-color: rgba(0,0,0,0.5);
-    opacity: 65%;
-    max-width: 800px;
-    height: 500px;
-    border-radius: 30px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    /* flex-direction: column; */
-    position: relative;
-  }
-  
-  .section-input, .section-msgs {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    position: relative;
-
-    /* flex-grow: 1; */
-    /*  */
-  }
-  .bottom-box {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-  }
-
-  .bottom-msg {
-      position: absolute;
-      bottom: 50px;
-      right: 0;
-      width: 100%;
-  }
-
-  /* .b {
-    display: block;
-    position: relative;
-  } */
+<style scoped>
 
 </style>
