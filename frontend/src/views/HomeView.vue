@@ -1,6 +1,7 @@
 <template>
   <main>
     <Messages :messages="messages"/>
+    <h2 class="text-3xl underline">teste 34</h2>
     <Textbox @send-message="(text)=>{sendMessage(text)}"/>
   </main>
 </template>
@@ -10,11 +11,12 @@
   import Messages from '../components/Messages.vue'
   import Textbox from '../components/Textbox.vue'
   import type {Message} from '../interfaces/message'
-  import { onMounted, ref } from 'vue';
+  import { onDeactivated, onMounted, ref } from 'vue';
   import type {Ref} from 'vue'
   import axios from 'axios';
 
   const messages: Ref<Message[]> = ref([])
+
   const sendMessage = async (text: string)=>{
     messages.value = [...messages.value, {sender: 'user', content: text}] 
     try {
@@ -33,3 +35,5 @@
     await sendMessage("teste2")
   })
 </script>
+
+<style></style>
