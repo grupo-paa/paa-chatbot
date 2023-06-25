@@ -1,7 +1,16 @@
 <template>
   <main>
-    <Messages :messages="messages"/>
-    <Textbox @send-message="(text)=>{sendMessage(text)}"/>
+    <div class="chatbox">
+      <!-- <div class="b"> -->
+        <section class="section-msgs bottom-msg">
+          <Messages :messages="messages"/>
+        </section>
+        <section class="section-input bottom-box">
+          <Textbox @send-message="(text)=>{sendMessage(text)}"/>
+        </section>
+
+      <!-- </div> -->
+    </div>
   </main>
 </template>
 
@@ -33,3 +42,54 @@
     await sendMessage("teste2")
   })
 </script>
+
+<style>
+  .chatbox {
+    margin: auto;
+    /* margin-left: auto; */
+    background-color: rgba(0,0,0,0.5);
+    opacity: 65%;
+    max-width: 800px;
+    height: 500px;
+    border-radius: 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* flex-direction: column; */
+    position: relative;
+  }
+  
+  .section-input, .section-msgs {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    /* flex-grow: 1; */
+    /*  */
+  }
+  .bottom-box {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+  }
+
+  .bottom-msg {
+      position: absolute;
+      bottom: 50px;
+      right: 0;
+      width: 100%;
+  }
+
+  /* .b {
+    display: block;
+    position: relative;
+  } */
+
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+</style>
