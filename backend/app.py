@@ -3,10 +3,7 @@ from flask_cors import CORS
 from pymongo import MongoClient
 import os
 
-import sys
-sys.path.append('C:\\Users\\pedro\\Documents\\Codes\\Python\\PAA\\paa-chatbot\\chatbot')
-
-from chatbot import predict_class, get_response, intents
+from chatbot.chatbot import predict_class, get_response, intents
 
 client = MongoClient("mongodb+srv://admin:admin@paa-chatbot.tp4urq2.mongodb.net/?retryWrites=true&w=majority")
 

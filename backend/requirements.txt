@@ -4,3 +4,6 @@ pytest
 pyjwt
 pillow
 pymongo
+nltk
+tensorflow
+numpy
