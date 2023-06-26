@@ -54,6 +54,7 @@ def predict_class(sentence):
   return return_list
 
 def get_response(intents_list, intents_json):
+  print(intents_list)
   tag = intents_list[0]['intent']
   list_of_intents = intents_json['intents']
   for i in list_of_intents:
@@ -71,6 +72,8 @@ if __name__ == '__main__':
   while counter < max_iterations:
     message = input('')
     ints = predict_class(message)
+    print('message', ints)
+    print('ints', ints)
     res = get_response(ints, intents)
     print(res)
     counter += 1
