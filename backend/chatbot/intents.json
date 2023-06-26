@@ -103,13 +103,17 @@
     {
       "tag": "Luke",
       "patterns": [
-        "Luke",
-        "Skywalker",
-        "Luke Skywalker",
-        "tell me about Luke Skywalker",
-        "what is the height of Luke Skywalker?",
-        "what is the gender of Luke Skywalker?",
-        "where is Luke Skywalker from?"
+        "Luke", "Skywalker",
+        "Luke", "Luke Skywalker",
+        "Luke", "tell me about Luke Skywalker",
+        "Luke", "what is the height of Luke Skywalker?",
+        "Luke", "what is the gender of Luke Skywalker?",
+        "Luke", "where is Luke Skywalker from?",
+        "about", "Luke",
+        "tell", "Luke",
+        "height", "Luke",
+        "gender", "Luke",
+        "from", "Luke"
       ],
       "responses": [
         "Luke Skywalker is a character from Star Wars. He is a male character.",
@@ -122,7 +126,7 @@
     {
       "tag": "C-3PO",
       "patterns": [
-        "C-3PO", "3PO", "PO", "tell me about C-3PO",
+        "C-3PO", "tell me about C-3PO",
         "what is the height of C-3PO?",
         "what is the gender of C-3PO?",
         "where is C-3PO from?"
