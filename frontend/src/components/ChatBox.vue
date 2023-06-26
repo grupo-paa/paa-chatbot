@@ -33,7 +33,7 @@
         }
     }
     onMounted(async () => {
-        await sendMessage("teste2")
+        // await sendMessage("teste2")
     })
 </script>
 
