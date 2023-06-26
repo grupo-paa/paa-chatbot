@@ -1,17 +1,13 @@
-{
-  "intents": [
-    {
-      "tag": "greetings",
+{"intents": [
+    { "tag": "greetings",
       "patterns": ["hello", "hey", "hi", "howdy", "greetings"],
       "responses": ["Hello!", "Hey", "Hi there!", "Greetings!", "Nice to meet you!"]
     },
-    {
-      "tag": "goodbye",
+    {"tag": "goodbye",
       "patterns": ["bye", "goodbye", "see you", "take care"],
       "responses": ["Goodbye!", "See you later", "Take care!", "Have a great day!"]
     },
-    {
-      "tag": "thanks",
+    {"tag": "thanks",
       "patterns": ["thank you", "thanks a lot", "much appreciated", "thank you so much"],
       "responses": ["You're welcome!", "No problem", "Glad I could help", "Anytime!"]
     }

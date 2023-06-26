@@ -12,9 +12,9 @@ from tensorflow.keras.models import load_model
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('intents.json').read())
 
-words = pickle.load(open('words.psk', 'rb'))
-classes = pickle.load(open('classes.psk', 'rb'))
-model = pickle.load(open('chatbot_model.psk', 'rb'))
+words = pickle.load(open('words.pkl', 'rb'))
+classes = pickle.load(open('classes.pkl', 'rb'))
+model = load_model('chatbot_model.h5')
 
 def clean_up_sentence(sentence):
   sentence_words = nltk.word_tokenize(sentence)
@@ -41,3 +41,25 @@ def predict_class(sentence):
   for r in results:
     return_list.append({'intent': classes[r[0]], 'probability': str(r[1])})
   return return_list
+
+def get_response(intents_list, intents_json):
+  tag = intents_list[0]['intent']
+  list_of_intents = intents_json['intents']
+  for i in list_of_intents:
+    if i['tag'] == tag:
+      result = random.choice(i['responses'])
+      break
+  return result
+
+
+if __name__ == '__main__':
+  print('GO, BOT IS RUNNING')
+  counter = 0
+  max_iterations = 5
+
+  while counter < max_iterations:
+    message = input('')
+    ints = predict_class(message)
+    res = get_response(ints, intents)
+    print(res)
+    counter += 1
