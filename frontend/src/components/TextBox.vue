@@ -1,6 +1,6 @@
 <template>
     <q-form @submit="sendMessage" ref="msgForm" class="row justify-center q-gutter-x-sm">
-        <q-input rounded outlined lazy-rules :rules="[(text) => text && text.length > 0 || 'Por favor, digite uma mensagem']" class="col-9" v-model="text"></q-input>
+        <q-input hide-bottom-space rounded outlined lazy-rules :rules="[(text) => text && text.length > 0 || 'Por favor, digite uma mensagem']" class="col-9" v-model="text"></q-input>
         <q-btn rounded flat color="secondary" class="col-1" type="submit" icon="send"/>
     </q-form>
 </template>
