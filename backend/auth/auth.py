@@ -71,7 +71,7 @@ def login():
     print(user['nickname'])
     return {
       "message": "Successfully fetched auth token",
-      "data": {"token": user["token"].decode('utf-8'), "nickname": user["nickname"]}
+      "data": {"token": user["token"], "nickname": user["nickname"]}
     }
   except Exception as e:
     return {
