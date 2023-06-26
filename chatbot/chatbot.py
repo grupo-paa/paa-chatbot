@@ -1,4 +1,4 @@
-import random
+import os
 import random
 import json
 import pickle
@@ -10,11 +10,23 @@ from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model
 
 lemmatizer = WordNetLemmatizer()
-intents = json.loads(open('intents.json').read())
+intents_path = os.path.join(os.path.dirname(__file__), 'intents.json')
 
-words = pickle.load(open('words.pkl', 'rb'))
-classes = pickle.load(open('classes.pkl', 'rb'))
-model = load_model('chatbot_model.h5')
+with open(intents_path) as file:
+  intents = json.load(file)
+
+words_path = os.path.join(os.path.dirname(__file__), 'words.pkl')
+with open(words_path, 'rb') as file:
+  words = pickle.load(file)
+
+classes_path = os.path.join(os.path.dirname(__file__), 'classes.pkl')
+
+with open(classes_path, 'rb') as file:
+  classes = pickle.load(file)
+
+model_path = os.path.join(os.path.dirname(__file__), 'chatbot_model.h5')
+# Load the model
+model = load_model(model_path)
 
 def clean_up_sentence(sentence):
   sentence_words = nltk.word_tokenize(sentence)
