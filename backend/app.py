@@ -47,7 +47,7 @@ def chat():
   res = get_response(ints, intents)
 
   print(res)
-  return jsonify({'response': res})
+  return jsonify({'content': res, 'sender': 'bot'})
 
 # if __name__ == '__main__':
 #   print('GO, BOT IS RUNNING')
