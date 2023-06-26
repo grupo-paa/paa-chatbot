@@ -26,19 +26,9 @@ for intent in intents['intents']:
       classes.append(intent['tag'])
 
 lemmatizer = WordNetLemmatizer()
-
-# words = []
-# for word in words:
-#   print(word)
-#   print("lemma", lemmatizer.lemmatize(word))
-#   if word not in ignore_letters:
-#     word.append(lemmatizer.lemmatize(word))
-# words = [lemmatizer.lemmatize(word) for word in words if word not in ignore_letters]
 words = [lemmatizer.lemmatize(word) for word in words if word not in ignore_letters]
-# words = [lemmatizer.lemmatize(word) for word_list in words for word in word_list if word not in ignore_letters]
-words = sorted(set(words))
-print('words', words)
 
+words = sorted(set(words))
 classes = sorted(set(classes))
 
 pickle.dump(words, open('words.pkl', 'wb'))
@@ -52,7 +42,7 @@ for document in documents:
     word_patterns = document[0]
     word_patterns = [lemmatizer.lemmatize(word.lower()) for word in word_patterns]
     for word in words:
-        bag.append(1) if word in word_patterns else bag.append(0)
+      bag.append(1) if word in word_patterns else bag.append(0)
 
     output_row = list(output_empty)
     output_row[classes.index(document[1])] = 1

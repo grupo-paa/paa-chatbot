@@ -25,7 +25,6 @@ with open(classes_path, 'rb') as file:
   classes = pickle.load(file)
 
 model_path = os.path.join(os.path.dirname(__file__), 'chatbot_model.h5')
-# Load the model
 model = load_model(model_path)
 
 def clean_up_sentence(sentence):
