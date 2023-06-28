@@ -4,15 +4,52 @@ import bcrypt
 import os
 from app import db
 from app import app
+from flask import current_app
+from bson.objectid import ObjectId
 
 
 auth = Blueprint('auth', __name__, url_prefix="/auth")
 
 users = db.users
 
+@auth.route('/validate', methods=['GET'])
+def validate():
+    users = db.users
+    token = None
+    if "Authorization" in request.headers:
+        token = request.headers["Authorization"].split(" ")[1]
+    if not token:
+        return {
+            "message": "Authentication Token is missing!",
+            "data": None,
+            "error": "Unauthorized"
+        }, 401
+    try:
+        data = jwt.decode(token, current_app.config["SECRET_KEY"], algorithms=["HS256"])
+        current_user = users.find_one({"_id": ObjectId(data["user_id"])})
+        
+        if current_user is None:
+            return {
+                "message": "Invalid Authentication token!",
+                "data": None,
+                "error": "Unauthorized"
+            }, 401
+        else:
+            return {
+               "message": "Valid Token"
+            }, 200
+    except Exception as e:
+        return {
+            "message": "Invalid Authentication token!",
+            "data": None,
+            "error": "Unauthorized"
+        }, 500
+    
+
 @auth.route('/login', methods=['POST'])
 def login():
   content = request.json
+  print(content['password'])
   if not content:
     return {
       "message": "Please provide user details",
