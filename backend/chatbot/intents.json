@@ -122,14 +122,18 @@
         "Luke Skywalker is from Tatooine."
       ]
     },
-
     {
       "tag": "C-3PO",
       "patterns": [
-        "C-3PO", "tell me about C-3PO",
-        "what is the height of C-3PO?",
-        "what is the gender of C-3PO?",
-        "where is C-3PO from?"
+        "C-3PO", "tell me about",
+        "C-3PO", "what is the height of ?",
+        "C-3PO", "what is the gender of ?",
+        "C-3PO", "where is from?",
+        "about", "C-3PO",
+        "tell", "C-3PO",
+        "height", "C-3PO",
+        "gender", "C-3PO",
+        "from", "C-3PO"
       ],
       "responses": [
         "C-3PO is a character from Star Wars. He is a protocol droid.",
@@ -142,10 +146,16 @@
     {
       "tag": "R2-D2",
       "patterns": [
-        "R2", "D2", "R2-D2", "tell me about R2-D2",
-        "what is the height of R2-D2?",
-        "what is the gender of R2-D2?",
-        "where is R2-D2 from?"
+        "D2", "R2-D2",
+        "R2-D2", "tell me about",
+        "R2-D2", "what is the height of?",
+        "R2-D2", "what is the gender of?",
+        "R2-D2", "where is from?",
+        "about", "R2-D2",
+        "tell", "R2-D2",
+        "height", "R2-D2",
+        "gender", "R2-D2",
+        "from", "R2-D2"
       ],
       "responses": [
         "R2-D2 is a character from Star Wars. He is an astromech droid.",
@@ -158,10 +168,15 @@
     {
       "tag": "Darth Vader",
       "patterns": [
-        "tell me about Darth Vader",
-        "what is the height of Darth Vader?",
-        "what is the gender of Darth Vader?",
-        "where is Darth Vader from?"
+        "Darth Vader", "tell me about",
+        "Darth Vader", "what is the height of?",
+        "Darth Vader", "what is the gender of?",
+        "Darth Vader", "where is from?",
+        "about", "Darth Vader",
+        "tell", "Darth Vader",
+        "height", "Darth Vader",
+        "gender", "Darth Vader",
+        "from", "Darth Vader"
       ],
       "responses": [
         "Darth Vader is a character from Star Wars. He is a male character.",
