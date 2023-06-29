@@ -49,7 +49,6 @@ def validate():
 @auth.route('/login', methods=['POST'])
 def login():
   content = request.json
-  print(content['password'])
   if not content:
     return {
       "message": "Please provide user details",
@@ -58,6 +57,7 @@ def login():
     }, 400
   password = content['password'].encode('utf-8')
   user = users.find_one({"user":content['user']})
+  print(user)
   hashed = bcrypt.hashpw(password, user['salt'])
   if(not user['password'] == hashed):
     return {"message": "Username or password invalid"},403
@@ -67,7 +67,8 @@ def login():
       app.config["SECRET_KEY"],
       algorithm="HS256"
     )
-
+    print(user['token'])
+    print(user['nickname'])
     return {
       "message": "Successfully fetched auth token",
       "data": {"token": user["token"], "nickname": user["nickname"]}

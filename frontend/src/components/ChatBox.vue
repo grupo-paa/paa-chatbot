@@ -23,7 +23,7 @@
         try {
         let res = await axios({
             method:'post',
-            url: 'http://localhost:5000/message',
+            url: 'http://localhost:5000/chat',
             data: {message:text}
         });
         let receivedMessage: Message = res.data
@@ -33,7 +33,7 @@
         }
     }
     onMounted(async () => {
-        await sendMessage("teste2")
+        // await sendMessage("teste2")
     })
 </script>
 
