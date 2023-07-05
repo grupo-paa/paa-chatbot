@@ -3,7 +3,9 @@ import random
 import json
 import pickle
 import numpy as np
-
+import requests
+from nltk import ne_chunk, pos_tag, word_tokenize
+from nltk.tree import Tree
 import nltk
 from nltk.stem import WordNetLemmatizer
 
@@ -54,9 +56,22 @@ def predict_class(sentence):
     return_list.append({'intent': classes[r[0]], 'probability': str(r[1])})
   return return_list
 
-def get_response(intents_list, intents_json):
+def get_response(intents_list, intents_json, message):
+  
+  nltk_results = ne_chunk(pos_tag(word_tokenize(message)))
+  character = ''
+  for nltk_result in nltk_results:
+    if type(nltk_result) == Tree:
+      name = ''
+      for nltk_result_leaf in nltk_result.leaves():
+        name += nltk_result_leaf[0] + ' '
+      character = name
+      # print ('Type: ', nltk_result.label(), 'Name: ', name)
   print(intents_list)
   tag = intents_list[0]['intent']
+  url = f"https://swapi.dev/api/people/?search={character}"
+  res = requests.get(url)
+  print(res.json()['results'][0][tag])
   list_of_intents = intents_json['intents']
   for i in list_of_intents:
     if i['tag'] == tag:
@@ -75,6 +90,6 @@ if __name__ == '__main__':
     ints = predict_class(message)
     print('message', message)
     print('ints', ints)
-    res = get_response(ints, intents)
+    res = get_response(ints, intents, message)
     print(res)
     counter += 1
