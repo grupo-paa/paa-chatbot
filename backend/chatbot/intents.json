@@ -60,6 +60,13 @@
       ]
     },
     {
+      "tag": "eye_color",
+      "patterns": ["what's the eye color"],
+      "responses": [
+        "{name}'s eye color is {response}"
+      ]
+    },
+    {
       "tag": "weather",
       "patterns": ["what's the weather like today?", "will it rain tomorrow?"],
       "responses": [

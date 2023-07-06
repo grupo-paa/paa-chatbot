@@ -66,7 +66,8 @@ def get_response(intents_list, intents_json, message):
       for nltk_result_leaf in nltk_result.leaves():
         name += nltk_result_leaf[0] + ' '
       character = name
-      # print ('Type: ', nltk_result.label(), 'Name: ', name)
+      print ('Type: ', nltk_result.label(), 'Name: ', name)
+  
   print(intents_list)
   tag = intents_list[0]['intent']
   url = f"https://swapi.dev/api/people/?search={character}"
