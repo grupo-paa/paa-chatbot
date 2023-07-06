@@ -101,31 +101,138 @@
       ]
     },
 
-      {
-        "tag":"vehicles",
-        "patterns": ["what's the vehicle", "what are the vehicle"],
-        "responses": {
-          "singular":[
-            "{name}'s vehicle is {response}"
-          ],
-          "multiple": [
-            "{name}'s vehicles are {response}"
-          ]
-        }
-      },
-      {
-        "tag": "height",
-        "patterns": ["what's the height"],
-        "responses": [
-          "{name}'s height is {response}"
-        ]
-      },
-      {
-        "tag": "eye_color",
-        "patterns": ["what's the eye color"],
-        "responses": [
-          "{name}'s eye color is {response}"
+    
+    {
+      "tag":"species",
+      "patterns": ["what's the specie"],
+      "responses": {
+        "singular":[
+          "{name}'s specie is {response}"
+        ],
+        "multiple": []
+      }
+    },
+
+    {
+      "tag":"starships",
+      "patterns": ["what's the starship", "what are the starships"],
+      "responses": {
+        "singular":[
+          "{name}'s starship is {response}"
+        ],
+        "multiple": [
+          "{name}'s starships are {response}"
         ]
       }
+    },
+
+    {
+      "tag":"vehicles",
+      "patterns": ["what's the vehicle", "what are the vehicle"],
+      "responses": {
+        "singular":[
+          "{name}'s vehicle is {response}"
+        ],
+        "multiple": [
+          "{name}'s vehicles are {response}"
+        ]
+      }
+    },
+    {
+      "tag": "height",
+      "patterns": ["what's the height"],
+      "responses": {
+        "singular":[
+          "{name}'s height is {response} cm"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "eye_color",
+      "patterns": ["what's the eye color"],
+      "responses": {
+        "singular":[
+          "{name}'s eye color is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "skin_color",
+      "patterns": ["what's the skin color"],
+      "responses": {
+        "singular":[
+          "{name}'s skin color is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "hair_color",
+      "patterns": ["what's the hair color"],
+      "responses": {
+        "singular":[
+          "{name}'s hair color is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "mass",
+      "patterns": ["what's the weight", "what's the mass"],
+      "responses": {
+        "singular":[
+          "{name}'s weight is {response} Kg"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "gender",
+      "patterns": ["what's the gender"],
+      "responses": {
+        "singular":[
+          "{name}'s gender is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "birth_year",
+      "patterns": ["what's the birth year", "when was born"],
+      "responses": {
+        "singular":[
+          "{name} was born in {response}",
+          "{name}'s birth is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "homeworld",
+      "patterns": ["what's the homeworld", "what's the planet of birth"],
+      "responses": {
+        "singular":[
+          "{name}'s homeworld is {response}",
+          "{name}'s planet of birth is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "films",
+      "patterns": ["in what films appears", "in what movies appears"],
+      "responses": {
+        "singular":[
+          "{name} is in {response}",
+          "{name} appears in {response}"
+        ],
+        "multiple": [
+          "{name} is in {response}",
+          "{name} appears in {response}"
+        ]
+      }
+    }
   ]
 }
