@@ -101,7 +101,7 @@
       ]
     },
 
-    
+
     {
       "tag":"species",
       "patterns": ["what's the specie"],
@@ -231,6 +231,132 @@
         "multiple": [
           "{name} is in {response}",
           "{name} appears in {response}"
+        ]
+      }
+    },
+
+
+    {
+      "tag": "characters",
+      "patterns": ["what characters appear"],
+      "responses": {
+        "singular":[],
+        "multiple": [
+          "In {name} appear {response}",
+          "{response} appear in {name}"
+        ]
+      }
+    },
+    {
+      "tag": "director",
+      "patterns": ["what's the director", "who directed"],
+      "responses": {
+        "singular":[
+          "{name} is directed by {response}",
+          "{response} directs {name}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "producer",
+      "patterns": ["what's the producer", "what are the producers", "who produced"],
+      "responses": {
+        "singular":[
+          "{name} is produced by {response}",
+          "{response} produced {name}"
+        ],
+        "multiple": [
+          "{name} is produced by {response}",
+          "{response} produced {name}"
+        ]
+      }
+    },
+    {
+      "tag": "episode_id",
+      "patterns": ["what's the episode"],
+      "responses": {
+        "singular":[
+          "{name} is episode {response} in Star Wars Series"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "opening_crawl",
+      "patterns": ["what's the opening"],
+      "responses": {
+        "singular":[
+          "{name}'s opening crawl is: {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "planets_film",
+      "patterns": ["what planets appear"],
+      "responses": {
+        "singular":[],
+        "multiple": [
+          "In {name}, the planets {response} appear"
+        ]
+      }
+    },
+    {
+      "tag": "release_date",
+      "patterns": ["what's the release date", "when was released"],
+      "responses": {
+        "singular":[
+          "{name} was released in {response}",
+          "{response} was the release date of {name}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "title",
+      "patterns": ["what's the title"],
+      "responses": {
+        "singular":[
+          "{name}'s title is {response}",
+          "{response} is the title of {name}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "species_film",
+      "patterns": ["what species appear"],
+      "responses": {
+        "singular":[],
+        "multiple": [
+          "In {name}, {response} are species that appear",
+          "The species that appear in {name} are {response}",
+          "There are {response} in {name}"
+        ]
+      }
+    },
+    {
+      "tag": "starships_film",
+      "patterns": ["what starships appear"],
+      "responses": {
+        "singular":[],
+        "multiple": [
+          "In {name}, {response} are starships that appear",
+          "The starships that appear in {name} are {response}",
+          "There are {response} in {name}"
+        ]
+      }
+    },
+    {
+      "tag": "vehicles_film",
+      "patterns": ["what vehicles appear"],
+      "responses": {
+        "singular":[],
+        "multiple": [
+          "In {name}, {response} are vehicles that appear",
+          "The vehicles that appear in {name} are {response}",
+          "There are {response} in {name}"
         ]
       }
     }
