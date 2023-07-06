@@ -2,14 +2,14 @@
   <q-layout view="lHr lpR lfr">
     <q-header elevated>
       <q-toolbar>
-        <q-btn
+        <!-- <q-btn
           flat
           dense
           round
           icon="menu"
           aria-label="Menu"
           @click="toggleLeftDrawer"
-        />
+        /> -->
 
         <q-toolbar-title>
           Chatbot Starwars
@@ -54,6 +54,5 @@ const leftDrawerOpen = ref(false)
 
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value
-  console.log('teste')
 }
 </script>
