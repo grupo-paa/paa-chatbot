@@ -211,11 +211,12 @@
     },
     {
       "tag": "homeworld",
-      "patterns": ["what's the homeworld", "what's the planet of birth"],
+      "patterns": ["what's the homeworld", "what's the planet of birth", "from where originates"],
       "responses": {
         "singular":[
           "{name}'s homeworld is {response}",
-          "{name}'s planet of birth is {response}"
+          "{name}'s planet of birth is {response}",
+          "{name} originates from {response}"
         ],
         "multiple": []
       }
@@ -235,7 +236,7 @@
       }
     },
 
-    
+
 
     {
       "tag": "characters",
@@ -481,18 +482,6 @@
       }
     },
     {
-      "tag": "films_starship",
-      "patterns": ["in what films appears"],
-      "responses": {
-        "singular":[
-          "{name} appears in {response}"
-        ],
-        "multiple": [
-          "{name} appears in {response}"
-        ]
-      }
-    },
-    {
       "tag": "pilots",
       "patterns": ["what's the pilot", "what are the pilots"],
       "responses": {
@@ -512,6 +501,229 @@
       "responses": {
         "singular":[
           "{name}'s class is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "vehicle_class",
+      "patterns": ["what's the class"],
+      "responses": {
+        "singular":[
+          "{name}'s class is {response}"
+        ],
+        "multiple": []
+      }
+    },
+
+
+
+    {
+      "tag": "average_height",
+      "patterns": ["what's the average height"],
+      "responses": {
+        "singular":[
+          "{name}'s average height is {response} cm"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "average_lifespan",
+      "patterns": ["what's the average lifespan"],
+      "responses": {
+        "singular":[
+          "{name}'s average lifespan is {response} years",
+          "{name} usually lives to {response} years"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "classification",
+      "patterns": ["what's the classification"],
+      "responses": {
+        "singular":[
+          "{name}'s classification is {response}",
+          "{name} is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "designation",
+      "patterns": ["what's the designation"],
+      "responses": {
+        "singular":[
+          "{name}'s designation is {response}",
+          "{name} is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "eye_colors",
+      "patterns": ["what's the eye colors", "what's the common eye colors"],
+      "responses": {
+        "singular":[
+          "{name}'s eye color is {response}"
+        ],
+        "multiple": [
+          "{name}'s eye colors can be {response}"
+        ]
+      }
+    },
+    {
+      "tag": "hair_colors",
+      "patterns": ["what's the hair colors", "what's the common hair colors"],
+      "responses": {
+        "singular":[
+          "{name}'s hair color is {response}"
+        ],
+        "multiple": [
+          "{name}'s hair colors can be {response}"
+        ]
+      }
+    },
+    {
+      "tag": "skin_colors",
+      "patterns": ["what's the skin colors", "what's the common skin colors"],
+      "responses": {
+        "singular":[
+          "{name}'s skin color is {response}"
+        ],
+        "multiple": [
+          "{name}'s skin colors can be {response}"
+        ]
+      }
+    },
+    {
+      "tag": "language",
+      "patterns": ["what's the language", "what's the common language", "what does speak"],
+      "responses": {
+        "singular":[
+          "{name}'s language is {response}",
+          "{name} speaks {response}"
+        ],
+        "multiple": [
+          "{name}'s languages are {response}",
+          "{name} speaks {response}"
+        ]
+      }
+    },
+    {
+      "tag": "people",
+      "patterns": ["who are part"],
+      "responses": {
+        "singular":[
+          "{name} is {response}"
+        ],
+        "multiple": [
+          "{name} are {response}"
+        ]
+      }
+    },
+
+
+
+    {
+      "tag": "climate",
+      "patterns": ["what's the climate", "what's the weather of"],
+      "responses": {
+        "singular":[
+          "{name}'s climate is {response}",
+          "{name}'s weather is {response}"
+        ],
+        "multiple": [
+          "{name}'s climates are {response}"
+        ]
+      }
+    },
+    {
+      "tag": "terrain",
+      "patterns": ["what's the terrain"],
+      "responses": {
+        "singular":[
+          "{name}'s terrain is {response}"
+        ],
+        "multiple": [
+          "{name}'s terrains are {response}"
+        ]
+      }
+    },
+    {
+      "tag": "diameter",
+      "patterns": ["what's the diameter"],
+      "responses": {
+        "singular":[
+          "{name}'s diameter is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "gravity",
+      "patterns": ["what's the gravity"],
+      "responses": {
+        "singular":[
+          "{name}'s gravity is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "orbital_period",
+      "patterns": ["what's the orbital period"],
+      "responses": {
+        "singular":[
+          "{name}'s orbital period is {response} days"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "rotation_period",
+      "patterns": ["what's the rotation period"],
+      "responses": {
+        "singular":[
+          "{name}'s rotation period is {response} hours"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "population",
+      "patterns": ["what's the population", "how many sentient beings inhabit"],
+      "responses": {
+        "singular":[
+          "{name}'s population consists in {response} sentient beings",
+          "{response} sentient beings inhabit {name}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "residents",
+      "patterns": ["who lives", "who resids"],
+      "responses": {
+        "singular":[
+          "{name}'s resident is {response}",
+          "{response} lives in {name}",
+          "{response} resids in {name}"
+        ],
+        "multiple": [
+          "{name}'s resident are {response}",
+          "{response} live in {name}",
+          "{response} resid in {name}"
+        ]
+      }
+    },
+    {
+      "tag": "surface_water",
+      "patterns": ["what's percentage of water", "how much water"],
+      "responses": {
+        "singular":[
+          "{name}'s percentage of water is {response} percent"
         ],
         "multiple": []
       }
