@@ -72,11 +72,19 @@ def get_response(intents_list, intents_json, message):
   tag = intents_list[0]['intent']
   url = f"https://swapi.dev/api/people/?search={character}"
   res = requests.get(url)
-  print(res.json()['results'][0][tag])
+  print()
+  res = res.json()['results'][0][tag]
   list_of_intents = intents_json['intents']
   for i in list_of_intents:
     if i['tag'] == tag:
-      result = random.choice(i['responses'])
+      result = ''
+      if type(res) == list:
+        res = ", ".join(res)  
+        result = random.choice(i['responses']['multiple'])
+      else:
+        result = random.choice(i['responses']['singular'])
+      result = result.replace("{name}", character)
+      result = result.replace("{response}", res)
       break
   return result
 

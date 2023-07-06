@@ -53,20 +53,6 @@
       ]
     },
     {
-      "tag": "height",
-      "patterns": ["what's the height"],
-      "responses": [
-        "{name}'s height is {response}"
-      ]
-    },
-    {
-      "tag": "eye_color",
-      "patterns": ["what's the eye color"],
-      "responses": [
-        "{name}'s eye color is {response}"
-      ]
-    },
-    {
       "tag": "weather",
       "patterns": ["what's the weather like today?", "will it rain tomorrow?"],
       "responses": [
@@ -113,6 +99,33 @@
         "There are many great movies out there. What genre or theme are you interested in?",
         "It depends on your preferences. What kind of movies do you enjoy?"
       ]
-    }
+    },
+
+      {
+        "tag":"vehicles",
+        "patterns": ["what's the vehicle", "what are the vehicle"],
+        "responses": {
+          "singular":[
+            "{name}'s vehicle is {response}"
+          ],
+          "multiple": [
+            "{name}'s vehicles are {response}"
+          ]
+        }
+      },
+      {
+        "tag": "height",
+        "patterns": ["what's the height"],
+        "responses": [
+          "{name}'s height is {response}"
+        ]
+      },
+      {
+        "tag": "eye_color",
+        "patterns": ["what's the eye color"],
+        "responses": [
+          "{name}'s eye color is {response}"
+        ]
+      }
   ]
 }
