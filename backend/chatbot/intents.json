@@ -235,6 +235,7 @@
       }
     },
 
+    
 
     {
       "tag": "characters",
@@ -358,6 +359,161 @@
           "The vehicles that appear in {name} are {response}",
           "There are {response} in {name}"
         ]
+      }
+    },
+
+
+    {
+      "tag": "MGLT",
+      "patterns": ["what's the MGLT", "what's the Maximum number of Megalights"],
+      "responses": {
+        "singular":[
+          "{name} can travel {response} MGLT per hour"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "cargo_capacity",
+      "patterns": ["what's the cargo capacity", "what's the capacity"],
+      "responses": {
+        "singular":[
+          "{name}'s capacity is {response} Kg",
+          "{name} can transport a maximum of {response} Kg"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "consumables",
+      "patterns": ["how much time the consumables", "what's the most time the consumables"],
+      "responses": {
+        "singular":[
+          "The maximum length of time that {name} can provide consumables for its entire crew without having to resupply is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "cost_in_credits",
+      "patterns": ["how much cost", "what's the cost"],
+      "responses": {
+        "singular":[
+          "{name} cost {response} galactic credits",
+          "The cost of {name} are {response} galactic credits"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "crew",
+      "patterns": ["how many people are needed to pilot", "how many people are needed to run"],
+      "responses": {
+        "singular":[
+          "{name} needs {response} personnel to be runned"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "hyperdrive_rating",
+      "patterns": ["what's the hyperdrive's class", "what's the class of hyperdrive"],
+      "responses": {
+        "singular":[
+          "The class of {name}'s hyperdrive is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "length_starship",
+      "patterns": ["what's the lenght", "how many meters is"],
+      "responses": {
+        "singular":[
+          "{name} mesures {response} meters",
+          "{name}'s lenght is {response} meters"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "manufacturer",
+      "patterns": ["what's the manufacturer", "what are the manufacturers"],
+      "responses": {
+        "singular":[
+          "{name}'s manufacturer is {response}",
+          "{response} is {name}'s manufacturer"
+        ],
+        "multiple": [
+          "{name}'s manufacturers are {response}",
+          "{response} are {name}'s manufacturers"
+        ]
+      }
+    },
+    {
+      "tag": "max_atmosphering_speed",
+      "patterns": ["what's the max atmosphering speed", "what's the maximum atmosphering speed"],
+      "responses": {
+        "singular":[
+          "{name}'s maximum atmosphering speed is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "model",
+      "patterns": ["what's the model"],
+      "responses": {
+        "singular":[
+          "{name}'s model is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "passengers",
+      "patterns": ["how many passengers"],
+      "responses": {
+        "singular":[
+          "{name} is capable of transporting {response} non-essencial people"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "films_starship",
+      "patterns": ["in what films appears"],
+      "responses": {
+        "singular":[
+          "{name} appears in {response}"
+        ],
+        "multiple": [
+          "{name} appears in {response}"
+        ]
+      }
+    },
+    {
+      "tag": "pilots",
+      "patterns": ["what's the pilot", "what are the pilots"],
+      "responses": {
+        "singular":[
+          "{name} is piloted by {response}",
+          "{response} piloted {name}"
+        ],
+        "multiple": [
+          "{name} is piloted by {response}",
+          "{response} piloted {name}"
+        ]
+      }
+    },
+    {
+      "tag": "starship_class",
+      "patterns": ["what's the class"],
+      "responses": {
+        "singular":[
+          "{name}'s class is {response}"
+        ],
+        "multiple": []
       }
     }
   ]
