@@ -112,7 +112,6 @@
         "multiple": []
       }
     },
-
     {
       "tag":"starships",
       "patterns": ["what's the starship", "what are the starships"],
@@ -140,7 +139,7 @@
     },
     {
       "tag": "height",
-      "patterns": ["what's the height"],
+      "patterns": ["what's the height", "how tall is"],
       "responses": {
         "singular":[
           "{name}'s height is {response} cm"
@@ -562,7 +561,7 @@
       }
     },
     {
-      "tag": "eye_colors",
+      "tag": "eye_color",
       "patterns": ["what's the eye colors", "what's the common eye colors"],
       "responses": {
         "singular":[
@@ -574,7 +573,7 @@
       }
     },
     {
-      "tag": "hair_colors",
+      "tag": "hair_color",
       "patterns": ["what's the hair colors", "what's the common hair colors"],
       "responses": {
         "singular":[
