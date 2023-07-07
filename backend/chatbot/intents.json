@@ -723,6 +723,31 @@
         ],
         "multiple": []
       }
+    },
+    {
+      "tag": "apologies",
+      "patterns": [
+        "I'm sorry",
+        "Sorry",
+        "Apologies",
+        "My apologies",
+        "I apologize",
+        "Forgive me",
+        "I'm really sorry"
+      ],
+      "responses": {
+        "singular": [
+          "I apologize, our dataset doesn't that information about the character {name}"
+        ],
+        "multiple": [
+          "I apologize for any inconvenience caused.",
+          "I'm sorry if there was any misunderstanding.",
+          "I'm sorry for the confusion.",
+          "I apologize for the inconvenience.",
+          "I'm sorry for any inconvenience caused."
+        ]
+      }
     }
+    
   ]
 }

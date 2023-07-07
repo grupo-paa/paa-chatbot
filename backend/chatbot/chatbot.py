@@ -3,16 +3,21 @@ import random
 import json
 import pickle
 import numpy as np
+import nltk
 from nltk import ne_chunk, pos_tag, word_tokenize
 from nltk.tree import Tree
-import nltk
 from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
+
+import sys
+sys.path.append("C:/Users/pedro/Documents/Codes/Python/PAA/paa-chatbot/backend")
+
+# from database import db
 from pymongo import MongoClient
 
 client = MongoClient("mongodb+srv://admin:admin@paa-chatbot.tp4urq2.mongodb.net/?retryWrites=true&w=majority")
-
 db = client.flask_db
+
 
 lemmatizer = WordNetLemmatizer()
 
@@ -37,9 +42,35 @@ def clean_up_sentence(sentence):
 
   return sentence_words
 
+def not_found_handle():
+  return "apologies", " "
+
+def category_not_determined():
+  return "apologies"
+
+def classify_noun(noun):  
+  people = db.peoples.find_one({"name": noun})
+  if people:
+    return "peoples"
+  
+  species = db.species.find_one({"name": noun})
+  if species:
+    return "species"
+
+  vehicles = db.vehicles.find_one({"name": noun})
+  if vehicles:
+    return "vehicles"
+
+  planets = db.planets.find_one({"name": noun})
+  if planets:
+    return "planets"
+
+  return None
+
 def bag_of_words(sentence):
   sentence_words = clean_up_sentence(sentence)
   bag = [0] * len(words)
+
   for w in sentence_words:
     for i, word in enumerate(words):
       if word == w:
@@ -52,40 +83,50 @@ def predict_class(sentence):
 
   ERROR_THRESHOLD = 0.25
   results = [[i,r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
-
   results.sort(key=lambda x: x[1], reverse=True)
   return_list = []
+
   for r in results:
     return_list.append({'intent': classes[r[0]], 'probability': str(r[1])})
   return return_list
 
 def get_response(intents_list, intents_json, message):
   nltk_results = ne_chunk(pos_tag(word_tokenize(message)))
-  character = extract_character(nltk_results)
-
+  noun = extract_noun(nltk_results)
+  print("noun:", noun)
   print('Intents List:', intents_list)
-  print('character:', character)
 
   tag = intents_list[0]['intent']
-  query = {"name": character}
-  res = db.peoples.find_one(query)
-  print(res)
-  res = res[tag]
+  category = classify_noun(noun.lower())
+  query = {"name": noun.lower()}
+
+  if category:
+    collection = db[category]
+    query_res = collection.find_one(query)
+    print("query_res", query_res)
+    print("tag", tag)
+    print("query_res", query_res and tag in query_res)
+
+    if tag in query_res:
+      res = query_res[tag]
+    else:
+      tag, res = not_found_handle()
+  else:
+    res = category_not_determined()
 
   list_of_intents = intents_json['intents']
-  result = find_result(tag, res, list_of_intents, character)
-  
+  result = find_result(tag, res, list_of_intents, noun)
+
   return result
 
-def extract_character(nltk_results):
-  character = ''
+def extract_noun(nltk_results):
+  noun = ''
   for nltk_result in nltk_results:
     if isinstance(nltk_result, Tree):
       name = ' '.join([nltk_result_leaf[0] for nltk_result_leaf in nltk_result.leaves()])
-      character = name
+      noun = name
       print('Type:', nltk_result.label(), 'Name:', name)
-  return character
-
+  return noun
 
 def find_result(tag, res, list_of_intents, character):
   for intent in list_of_intents:
