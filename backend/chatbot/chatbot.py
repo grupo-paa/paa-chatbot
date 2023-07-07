@@ -4,13 +4,15 @@ import json
 import pickle
 import numpy as np
 import nltk
+import sys
 from nltk import ne_chunk, pos_tag, word_tokenize
 from nltk.tree import Tree
 from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
 
-import sys
-sys.path.append("C:/Users/pedro/Documents/Codes/Python/PAA/paa-chatbot/backend")
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+sys.path.append(parent_dir)
 
 from database import db
 
