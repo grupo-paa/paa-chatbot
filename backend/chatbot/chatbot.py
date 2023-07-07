@@ -12,11 +12,7 @@ from keras.models import load_model
 import sys
 sys.path.append("C:/Users/pedro/Documents/Codes/Python/PAA/paa-chatbot/backend")
 
-# from database import db
-from pymongo import MongoClient
-
-client = MongoClient("mongodb+srv://admin:admin@paa-chatbot.tp4urq2.mongodb.net/?retryWrites=true&w=majority")
-db = client.flask_db
+from database import db
 
 
 lemmatizer = WordNetLemmatizer()
