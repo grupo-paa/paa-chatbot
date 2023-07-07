@@ -234,9 +234,6 @@
         ]
       }
     },
-
-
-
     {
       "tag": "characters",
       "patterns": ["what characters appear"],

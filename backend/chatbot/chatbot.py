@@ -3,13 +3,16 @@ import random
 import json
 import pickle
 import numpy as np
-import requests
 from nltk import ne_chunk, pos_tag, word_tokenize
 from nltk.tree import Tree
 import nltk
 from nltk.stem import WordNetLemmatizer
-
 from keras.models import load_model
+from pymongo import MongoClient
+
+client = MongoClient("mongodb+srv://admin:admin@paa-chatbot.tp4urq2.mongodb.net/?retryWrites=true&w=majority")
+
+db = client.flask_db
 
 lemmatizer = WordNetLemmatizer()
 
@@ -57,37 +60,44 @@ def predict_class(sentence):
   return return_list
 
 def get_response(intents_list, intents_json, message):
-  
   nltk_results = ne_chunk(pos_tag(word_tokenize(message)))
-  character = ''
-  for nltk_result in nltk_results:
-    if type(nltk_result) == Tree:
-      name = ''
-      for nltk_result_leaf in nltk_result.leaves():
-        name += nltk_result_leaf[0] + ' '
-      character = name
-      print ('Type: ', nltk_result.label(), 'Name: ', name)
-  
-  print(intents_list)
+  character = extract_character(nltk_results)
+
+  print('Intents List:', intents_list)
+  print('character:', character)
+
   tag = intents_list[0]['intent']
-  url = f"https://swapi.dev/api/people/?search={character}"
-  res = requests.get(url)
-  print()
-  res = res.json()['results'][0][tag]
+  query = {"name": character}
+  res = db.peoples.find_one(query)
+  print(res)
+  res = res[tag]
+
   list_of_intents = intents_json['intents']
-  for i in list_of_intents:
-    if i['tag'] == tag:
-      result = ''
-      if type(res) == list:
-        res = ", ".join(res)  
-        result = random.choice(i['responses']['multiple'])
-      else:
-        result = random.choice(i['responses']['singular'])
-      result = result.replace("{name}", character)
-      result = result.replace("{response}", res)
-      break
+  result = find_result(tag, res, list_of_intents, character)
+  
   return result
 
+def extract_character(nltk_results):
+  character = ''
+  for nltk_result in nltk_results:
+    if isinstance(nltk_result, Tree):
+      name = ' '.join([nltk_result_leaf[0] for nltk_result_leaf in nltk_result.leaves()])
+      character = name
+      print('Type:', nltk_result.label(), 'Name:', name)
+  return character
+
+
+def find_result(tag, res, list_of_intents, character):
+  for intent in list_of_intents:
+    if intent['tag'] == tag:
+      if isinstance(res, list):
+        res = ", ".join(res)
+        result = random.choice(intent['responses']['multiple'])
+      else:
+        result = random.choice(intent['responses']['singular'])
+      result = result.replace("{name}", character)
+      result = result.replace("{response}", res)
+  return result
 
 if __name__ == '__main__':
   print('GO, BOT IS RUNNING')
