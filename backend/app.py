@@ -1,13 +1,8 @@
 from flask import Flask, Blueprint, jsonify, request 
 from flask_cors import CORS
 from pymongo import MongoClient
+from chatbot.chatbot import predict_class, get_response, intents, db
 import os
-
-from chatbot.chatbot import predict_class, get_response, intents
-
-client = MongoClient("mongodb+srv://admin:admin@paa-chatbot.tp4urq2.mongodb.net/?retryWrites=true&w=majority")
-
-db = client.flask_db
 
 app = Flask(__name__)
 
@@ -44,14 +39,9 @@ def chat():
   data = request.get_json()
   message = data['message']
   ints = predict_class(message)
-  res = get_response(ints, intents)
+  res = get_response(ints, intents, message)
 
-  print(res)
   return jsonify({'content': res, 'sender': 'bot'})
-
-# if __name__ == '__main__':
-#   print('GO, BOT IS RUNNING')
-#   app.run()
 
 if __name__ == "__main__":
   app.run(debug = True)
