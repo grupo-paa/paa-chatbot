@@ -16,6 +16,8 @@ sys.path.append(parent_dir)
 
 from database import db
 
+names = ['luke skywalker','c-3po','darth vader','owen lars','beru whitesun lars','r5-d4','biggs darklighter','anakin skywalker','shmi skywalker','cliegg lars','r2-d2','palpatine','padmé amidala','jar jar binks','roos tarpals','rugor nass','ric olié','quarsh panaka','gregar typho', 'cordé']
+not_nouns = ['specie', 'height', 'vehicles', 'starships', 'planet', 'planets', 'day', 'population']
 
 lemmatizer = WordNetLemmatizer()
 
@@ -40,30 +42,41 @@ def clean_up_sentence(sentence):
 
   return sentence_words
 
+def find_similar_name(name):
+  if (len(name) > 0):
+    for n in names:
+      if n.lower() in name.lower():
+        return n
+
+  return name
+
 def not_found_handle():
   return "apologies", " "
 
 def category_not_determined():
-  return "apologies"
+  return "apologies", " "
 
-def classify_noun(noun):  
-  people = db.peoples.find_one({"name": noun})
+def classify_noun(noun):
+  print("classify_noun", noun.lower())
+  similar_name = find_similar_name(noun).lower()
+  print("similar name", similar_name)
+  people = db.peoples.find_one({"name": similar_name})
   if people:
-    return "peoples"
+    return "peoples", similar_name
   
-  species = db.species.find_one({"name": noun})
+  species = db.species.find_one({"name": similar_name})
   if species:
-    return "species"
+    return "species", similar_name
 
-  vehicles = db.vehicles.find_one({"name": noun})
+  vehicles = db.vehicles.find_one({"name": similar_name})
   if vehicles:
-    return "vehicles"
+    return "vehicles", similar_name
 
-  planets = db.planets.find_one({"name": noun})
+  planets = db.planets.find_one({"name": similar_name})
   if planets:
-    return "planets"
+    return "planets", similar_name
 
-  return None
+  return None, None
 
 def bag_of_words(sentence):
   sentence_words = clean_up_sentence(sentence)
@@ -94,23 +107,85 @@ def get_response(intents_list, intents_json, message):
   print("noun:", noun)
   print('Intents List:', intents_list)
 
+  if isinstance(noun, list):
+    result_noun = noun = " ".join(noun)
+    category, similar_name = classify_noun(result_noun)
+    query = { "name": similar_name }
+  else:
+    category = classify_noun(noun.lower())
+    query = { "name": noun.lower() }
+    
   tag = intents_list[0]['intent']
-  category = classify_noun(noun.lower())
-  query = {"name": noun.lower()}
-
+  print("tag", tag)
+  print("category", category)
+  print("query", query)
+  
   if category:
     collection = db[category]
     query_res = collection.find_one(query)
-    print("query_res", query_res)
-    print("tag", tag)
-    print("query_res", query_res and tag in query_res)
+    print(query_res)
+    
+    if tag in [ 'vehicles', 'starships', 'films', 'species', 'residents' ]:
+      sub_res = []
+      if tag == 'residents':
+        sub_collection = db['peoples']
+      else:
+        sub_collection = db[tag]
+        
+      ar = query_res[tag]
 
-    if tag in query_res:
-      res = query_res[tag]
+      for a in ar:
+        print("url", a)
+        sub_query = { "url": a }
+        if tag in 'films':
+          sub_res.append(sub_collection.find_one(sub_query)["title"])
+        else:
+          sub_res.append(sub_collection.find_one(sub_query)["name"])
+      res = sub_res
+      print("sub_res", sub_res)
+
+      if len(sub_res) == 0:
+        tag, res = not_found_handle()
+
+    elif tag in [ 'homeworld' ]:
+        print("inside mf")
+        sub_collection = db['planets']
+        sub_query = { "url": query_res[tag] }
+        print("sub_query", sub_query)
+        print("wher", sub_collection.find_one(sub_query)["name"])
+        sub_res = sub_collection.find_one(sub_query)["name"]
+        res = sub_res
+        print("sub_res", sub_res)
+ 
+    # elif tag in [ 'residents' ]:
+    #     print("inside mf")
+    #     sub_collection = db['peoples']
+    #     sub_query = { "url": query_res[tag] }
+    #     print("sub_query", sub_query)
+    #     print("sub_query a s", sub_collection.find_one(sub_query)["name"])
+    #     print("wher", sub_collection.find_one(sub_query)["name"])
+    #     sub_res = sub_collection.find_one(sub_query)["name"]
+    #     res = sub_res
+    #     print("sub_res", sub_res)
+
     else:
-      tag, res = not_found_handle()
+      print("the first else")
+      if tag in query_res:
+        print(query_res[tag])
+        res = query_res[tag]
+        print("res", res)
   else:
-    res = category_not_determined()
+    print("the second else")
+    tag, res = not_found_handle()
+    # print("query_res", query_res and tag in query_res)
+    print("res", res)
+    print("tag", tag)
+    print("noun", noun)
+  print("noene palce")
+  print("res again", res)
+  
+  # else:
+  #   tag, res = category_not_determined()
 
   list_of_intents = intents_json['intents']
   result = find_result(tag, res, list_of_intents, noun)
@@ -118,30 +193,41 @@ def get_response(intents_list, intents_json, message):
   return result
 
 def extract_noun(nltk_results):
-  noun = ''
+  nouns = []
+
   for nltk_result in nltk_results:
     if isinstance(nltk_result, Tree):
       name = ' '.join([nltk_result_leaf[0] for nltk_result_leaf in nltk_result.leaves()])
-      noun = name
+      nouns.append(name)
       print('Type:', nltk_result.label(), 'Name:', name)
-  return noun
+    elif isinstance(nltk_result, tuple) and nltk_result[1].startswith('NN'):
+      noun = nltk_result[0]
+      if noun.lower() not in not_nouns:
+        nouns.append(noun)
+        print('Noun:', noun)
+  return nouns
 
 def find_result(tag, res, list_of_intents, character):
   for intent in list_of_intents:
     if intent['tag'] == tag:
       if isinstance(res, list):
-        res = ", ".join(res)
-        result = random.choice(intent['responses']['multiple'])
+        if (len(res) == 1):
+          res = ", ".join(res)
+          result = random.choice(intent['responses']['singular'])
+        else:
+          res = ", ".join(res)
+          result = random.choice(intent['responses']['multiple'])
       else:
         result = random.choice(intent['responses']['singular'])
       result = result.replace("{name}", character)
+      print("res ag ag ", res)
       result = result.replace("{response}", res)
   return result
 
 if __name__ == '__main__':
   print('GO, BOT IS RUNNING')
   counter = 0
-  max_iterations = 5
+  max_iterations = 2
 
   while counter < max_iterations:
     message = input('')
