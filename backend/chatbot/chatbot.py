@@ -57,7 +57,6 @@ def category_not_determined():
   return "apologies", " "
 
 def classify_noun(noun):
-  print("classify_noun", noun.lower())
   similar_name = find_similar_name(noun).lower()
   print("similar name", similar_name)
   people = db.peoples.find_one({"name": similar_name})
@@ -104,8 +103,6 @@ def predict_class(sentence):
 def get_response(intents_list, intents_json, message):
   nltk_results = ne_chunk(pos_tag(word_tokenize(message)))
   noun = extract_noun(nltk_results)
-  print("noun:", noun)
-  print('Intents List:', intents_list)
 
   if isinstance(noun, list):
     result_noun = noun = " ".join(noun)
@@ -116,14 +113,10 @@ def get_response(intents_list, intents_json, message):
     query = { "name": noun.lower() }
     
   tag = intents_list[0]['intent']
-  print("tag", tag)
-  print("category", category)
-  print("query", query)
   
   if category:
     collection = db[category]
     query_res = collection.find_one(query)
-    print(query_res)
     
     if tag in [ 'vehicles', 'starships', 'films', 'species', 'residents' ]:
       sub_res = []
@@ -135,54 +128,27 @@ def get_response(intents_list, intents_json, message):
       ar = query_res[tag]
 
       for a in ar:
-        print("url", a)
         sub_query = { "url": a }
         if tag in 'films':
           sub_res.append(sub_collection.find_one(sub_query)["title"])
         else:
           sub_res.append(sub_collection.find_one(sub_query)["name"])
       res = sub_res
-      print("sub_res", sub_res)
 
       if len(sub_res) == 0:
         tag, res = not_found_handle()
 
     elif tag in [ 'homeworld' ]:
-        print("inside mf")
         sub_collection = db['planets']
         sub_query = { "url": query_res[tag] }
-        print("sub_query", sub_query)
-        print("wher", sub_collection.find_one(sub_query)["name"])
         sub_res = sub_collection.find_one(sub_query)["name"]
         res = sub_res
-        print("sub_res", sub_res)
- 
-    # elif tag in [ 'residents' ]:
-    #     print("inside mf")
-    #     sub_collection = db['peoples']
-    #     sub_query = { "url": query_res[tag] }
-    #     print("sub_query", sub_query)
-    #     print("sub_query a s", sub_collection.find_one(sub_query)["name"])
-    #     print("wher", sub_collection.find_one(sub_query)["name"])
-    #     sub_res = sub_collection.find_one(sub_query)["name"]
-    #     res = sub_res
-    #     print("sub_res", sub_res)
 
     else:
-      print("the first else")
       if tag in query_res:
-        print(query_res[tag])
         res = query_res[tag]
-        print("res", res)
   else:
-    print("the second else")
     tag, res = not_found_handle()
-    # print("query_res", query_res and tag in query_res)
-    print("res", res)
-    print("tag", tag)
-    print("noun", noun)
-  print("noene palce")
-  print("res again", res)
   
   # else:
   #   tag, res = category_not_determined()
@@ -220,7 +186,6 @@ def find_result(tag, res, list_of_intents, character):
       else:
         result = random.choice(intent['responses']['singular'])
       result = result.replace("{name}", character)
-      print("res ag ag ", res)
       result = result.replace("{response}", res)
   return result
 
