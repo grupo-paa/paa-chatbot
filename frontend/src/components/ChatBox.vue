@@ -18,6 +18,8 @@
 
     const messages: Ref<Message[]> = ref([])
 
+    const emit = defineEmits(['jar'])
+
     const sendMessage = async (text: string)=>{
         messages.value = [...messages.value, {sender: 'user', content: text}] 
         try {
@@ -27,7 +29,11 @@
             data: {message:text}
         });
         let receivedMessage: Message = res.data
-        messages.value = [...messages.value, receivedMessage] 
+        messages.value = [...messages.value, receivedMessage]
+        const s = receivedMessage.content.toLowerCase()
+        if(s.includes("jar jar")){
+            emit('jar')
+        }
         } catch (e){
         axios.isAxiosError(e) ? console.log('axios:', e) : console.log(e);
         }
