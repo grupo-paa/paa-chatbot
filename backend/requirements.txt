@@ -1,3 +1,9 @@
 flask
 flask-cors
 pytest
+pyjwt
+pillow
+pymongo
+nltk
+tensorflow
+numpy

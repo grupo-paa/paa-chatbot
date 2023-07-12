@@ -1,0 +1,838 @@
+{
+  "intents": [
+    {
+      "tag": "greetings",
+      "patterns": ["hello", "hey", "hi", "howdy", "greetings"],
+      "responses": [
+        "Hello!",
+        "Hey",
+        "Hi there!",
+        "Greetings!",
+        "Nice to meet you!"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["bye", "goodbye", "see you", "take care"],
+      "responses": [
+        "Goodbye!",
+        "See you later",
+        "Take care!",
+        "Have a great day!"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "thank you",
+        "thanks a lot",
+        "much appreciated",
+        "thank you so much"
+      ],
+      "responses": [
+        "You're welcome!",
+        "No problem",
+        "Glad I could help",
+        "Anytime!"
+      ]
+    },
+    {
+      "tag": "age",
+      "patterns": ["how old are you?", "what's your age?"],
+      "responses": [
+        "I am an AI chatbot, so I don't have an age.",
+        "Age is just a number for me."
+      ]
+    },
+    {
+      "tag": "name",
+      "patterns": ["what's your name?", "who are you?"],
+      "responses": [
+        "I am a chatbot programmed to assist you.",
+        "You can call me Chatbot."
+      ]
+    },
+    {
+      "tag": "weather",
+      "patterns": ["what's the weather like today?", "will it rain tomorrow?"],
+      "responses": [
+        "I'm sorry, I don't have access to real-time weather information.",
+        "You can check the weather forecast using a weather app or website."
+      ]
+    },
+    {
+      "tag": "help",
+      "patterns": ["can you help me?", "I need assistance", "what can you do?"],
+      "responses": [
+        "Of course! I'm here to help. How can I assist you?",
+        "Sure, I'll do my best to assist you. What do you need help with?"
+      ]
+    },
+    {
+      "tag": "time",
+      "patterns": ["what time is it?", "can you tell me the current time?"],
+      "responses": [
+        "I don't have access to real-time clock. Please check your device for the current time.",
+        "Unfortunately, I am not capable of providing real-time information like the current time."
+      ]
+    },
+    {
+      "tag": "funny",
+      "patterns": ["tell me a joke", "make me laugh", "say something funny"],
+      "responses": [
+        "Why don't scientists trust atoms? Because they make up everything!",
+        "I used to be a baker, but I couldn't make enough dough."
+      ]
+    },
+    {
+      "tag": "food",
+      "patterns": ["what's your favorite food?", "do you like to eat?"],
+      "responses": [
+        "As an AI chatbot, I don't have a favorite food. But I'm here to help you with any questions you have.",
+        "I don't eat, but I can assist you with finding information about food and recipes."
+      ]
+    },
+    {
+      "tag": "movies",
+      "patterns": [
+        "what is your favorite movie?",
+        "recommend a movie",
+        "what's a good movie to watch?"
+      ],
+      "responses": [
+        "There are many great movies out there. What genre or theme are you interested in?",
+        "It depends on your preferences. What kind of movies do you enjoy?"
+      ]
+    },
+
+    {
+      "tag": "species",
+      "patterns": ["what's the specie"],
+      "responses": {
+        "singular": ["{name}'s specie is {response}"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "starships",
+      "patterns": [
+        "what's the starship",
+        "what are the starships",
+        "which starships",
+        "starships"
+      ],
+      "responses": {
+        "singular": ["{name}'s starship is {response}"],
+        "multiple": ["{name}'s starships are {response}"]
+      }
+    },
+
+    {
+      "tag": "vehicles",
+      "patterns": ["what's the vehicle", "what are the vehicle"],
+      "responses": {
+        "singular": ["{name}'s vehicle is {response}"],
+        "multiple": ["{name}'s vehicles are {response}"]
+      }
+    },
+    {
+      "tag": "height",
+      "patterns": ["what's the height", "how tall is"],
+      "responses": {
+        "singular": ["{name}'s height is {response} cm"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "eye_color",
+      "patterns": ["what's the eye color"],
+      "responses": {
+        "singular": ["{name}'s eye color is {response}"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "skin_color",
+      "patterns": ["what's the skin color"],
+      "responses": {
+        "singular": ["{name}'s skin color is {response}"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "hair_color",
+      "patterns": ["what's the hair color"],
+      "responses": {
+        "singular": ["{name}'s hair color is {response}"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "mass",
+      "patterns": [
+        "what's the mass",
+        "what is the mass",
+        "mass of",
+        "mass for",
+        "weight of",
+        "weight for",
+        "massy",
+        "massive",
+        "massiveness"
+      ],
+      "responses": {
+        "singular": ["{name}'s mass is {response} Kg"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "gender",
+      "patterns": ["what's the gender"],
+      "responses": {
+        "singular": ["{name}'s gender is {response}"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "birth_year",
+      "patterns": ["what's the birth year", "when was born"],
+      "responses": {
+        "singular": [
+          "{name} was born in {response}",
+          "{name}'s birth is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "homeworld",
+      "patterns": [
+        "what's the homeworld",
+        "what's the planet of birth",
+        "from where originates"
+      ],
+      "responses": {
+        "singular": [
+          "{name}'s homeworld is {response}",
+          "{name}'s planet of birth is {response}",
+          "{name} originates from {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "father",
+      "patterns": [
+        "Who's father",
+        "Who is the father of",
+        "Who's the father of"
+      ],
+      "responses": {
+        "singular": [
+          "{name}'s father is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "films",
+      "patterns": ["in what films appears", "in what movies appears","In which films does the character appears"],
+      "responses": {
+        "singular": ["{name} is in {response}", "{name} appears in {response}"],
+        "multiple": ["{name} is in {response}", "{name} appears in {response}"]
+      }
+    },
+    {
+      "tag": "characters",
+      "patterns": ["what characters appear"],
+      "responses": {
+        "singular": [],
+        "multiple": [
+          "In {name} appear {response}",
+          "{response} appear in {name}"
+        ]
+      }
+    },
+    {
+      "tag": "director",
+      "patterns": ["what's the director", "who directed"],
+      "responses": {
+        "singular": [
+          "{name} is directed by {response}",
+          "{response} directs {name}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "producer",
+      "patterns": [
+        "what's the producer",
+        "what are the producers",
+        "who produced"
+      ],
+      "responses": {
+        "singular": [
+          "{name} is produced by {response}",
+          "{response} produced {name}"
+        ],
+        "multiple": [
+          "{name} is produced by {response}",
+          "{response} produced {name}"
+        ]
+      }
+    },
+    {
+      "tag": "episode_id",
+      "patterns": ["what's the episode"],
+      "responses": {
+        "singular": ["{name} is episode {response} in Star Wars Series"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "opening_crawl",
+      "patterns": ["what's the opening"],
+      "responses": {
+        "singular": ["{name}'s opening crawl is: {response}"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "planets_film",
+      "patterns": ["what planets appear"],
+      "responses": {
+        "singular": [],
+        "multiple": ["In {name}, the planets {response} appear"]
+      }
+    },
+    {
+      "tag": "release_date",
+      "patterns": ["what's the release date", "when was released"],
+      "responses": {
+        "singular": [
+          "{name} was released in {response}",
+          "{response} was the release date of {name}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "title",
+      "patterns": ["what's the title"],
+      "responses": {
+        "singular": [
+          "{name}'s title is {response}",
+          "{response} is the title of {name}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "species_film",
+      "patterns": ["what species appear"],
+      "responses": {
+        "singular": [],
+        "multiple": [
+          "In {name}, {response} are species that appear",
+          "The species that appear in {name} are {response}",
+          "There are {response} in {name}"
+        ]
+      }
+    },
+    {
+      "tag": "starships_film",
+      "patterns": ["what starships appear"],
+      "responses": {
+        "singular": [],
+        "multiple": [
+          "In {name}, {response} are starships that appear",
+          "The starships that appear in {name} are {response}",
+          "There are {response} in {name}"
+        ]
+      }
+    },
+    {
+      "tag": "vehicles_film",
+      "patterns": ["what vehicles appear"],
+      "responses": {
+        "singular": [],
+        "multiple": [
+          "In {name}, {response} are vehicles that appear",
+          "The vehicles that appear in {name} are {response}",
+          "There are {response} in {name}"
+        ]
+      }
+    },
+
+    {
+      "tag": "MGLT",
+      "patterns": [
+        "what's the MGLT",
+        "what's the Maximum number of Megalights"
+      ],
+      "responses": {
+        "singular": ["{name} can travel {response} MGLT per hour"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "cargo_capacity",
+      "patterns": ["what's the cargo capacity", "what's the capacity"],
+      "responses": {
+        "singular": [
+          "{name}'s capacity is {response} Kg",
+          "{name} can transport a maximum of {response} Kg"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "consumables",
+      "patterns": [
+        "how much time the consumables",
+        "what's the most time the consumables"
+      ],
+      "responses": {
+        "singular": [
+          "The maximum length of time that {name} can provide consumables for its entire crew without having to resupply is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "cost_in_credits",
+      "patterns": ["how much cost", "what's the cost"],
+      "responses": {
+        "singular": [
+          "{name} cost {response} galactic credits",
+          "The cost of {name} are {response} galactic credits"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "crew",
+      "patterns": [
+        "how many people are needed to pilot",
+        "how many people are needed to run"
+      ],
+      "responses": {
+        "singular": ["{name} needs {response} personnel to be runned"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "hyperdrive_rating",
+      "patterns": [
+        "what's the hyperdrive's class",
+        "what's the class of hyperdrive"
+      ],
+      "responses": {
+        "singular": ["The class of {name}'s hyperdrive is {response}"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "length_starship",
+      "patterns": ["what's the lenght", "how many meters is"],
+      "responses": {
+        "singular": [
+          "{name} mesures {response} meters",
+          "{name}'s lenght is {response} meters"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "max_atmosphering_speed",
+      "patterns": [
+        "what's the max atmosphering speed",
+        "what's the maximum atmosphering speed"
+      ],
+      "responses": {
+        "singular": ["{name}'s maximum atmosphering speed is {response}"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "model",
+      "patterns": ["what's the model"],
+      "responses": {
+        "singular": ["{name}'s model is {response}"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "passengers",
+      "patterns": ["how many passengers"],
+      "responses": {
+        "singular": [
+          "{name} is capable of transporting {response} non-essencial people"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "pilots",
+      "patterns": ["what's the pilot", "what are the pilots"],
+      "responses": {
+        "singular": [
+          "{name} is piloted by {response}",
+          "{response} piloted {name}"
+        ],
+        "multiple": [
+          "{name} is piloted by {response}",
+          "{response} piloted {name}"
+        ]
+      }
+    },
+    {
+      "tag": "starship_class",
+      "patterns": ["what's the class"],
+      "responses": {
+        "singular": ["{name}'s class is {response}"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "vehicle_class",
+      "patterns": ["what's the class"],
+      "responses": {
+        "singular": ["{name}'s class is {response}"],
+        "multiple": []
+      }
+    },
+
+    {
+      "tag": "average_height",
+      "patterns": ["what's the average height"],
+      "responses": {
+        "singular": ["{name}'s average height is {response} cm"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "average_lifespan",
+      "patterns": ["what's the average lifespan"],
+      "responses": {
+        "singular": [
+          "{name}'s average lifespan is {response} years",
+          "{name} usually lives to {response} years"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "classification",
+      "patterns": ["what's the classification"],
+      "responses": {
+        "singular": [
+          "{name}'s classification is {response}",
+          "{name} is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "designation",
+      "patterns": ["what's the designation"],
+      "responses": {
+        "singular": [
+          "{name}'s designation is {response}",
+          "{name} is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "eye_color",
+      "patterns": ["what's the eye colors", "what's the common eye colors"],
+      "responses": {
+        "singular": ["{name}'s eye color is {response}"],
+        "multiple": ["{name}'s eye colors can be {response}"]
+      }
+    },
+    {
+      "tag": "hair_color",
+      "patterns": ["what's the hair color", "what's the common hair color"],
+      "responses": {
+        "singular": ["{name}'s hair color is {response}"],
+        "multiple": ["{name}'s hair color can be {response}"]
+      }
+    },
+    {
+      "tag": "skin_color",
+      "patterns": ["what's the skin color", "what's the common skin color"],
+      "responses": {
+        "singular": ["{name}'s skin color is {response}"],
+        "multiple": ["{name}'s skin color can be {response}"]
+      }
+    },
+    {
+      "tag": "language",
+      "patterns": [
+        "what's the language",
+        "what's the common language",
+        "what does speak"
+      ],
+      "responses": {
+        "singular": [
+          "{name}'s language is {response}",
+          "{name} speaks {response}"
+        ],
+        "multiple": [
+          "{name}'s languages are {response}",
+          "{name} speaks {response}"
+        ]
+      }
+    },
+    {
+      "tag": "people",
+      "patterns": ["who are part"],
+      "responses": {
+        "singular": ["{name} is {response}"],
+        "multiple": ["{name} are {response}"]
+      }
+    },
+
+    {
+      "tag": "climate",
+      "patterns": ["what's the climate", "what's the weather of"],
+      "responses": {
+        "singular": [
+          "{name}'s climate is {response}",
+          "{name}'s weather is {response}"
+        ],
+        "multiple": ["{name}'s climates are {response}"]
+      }
+    },
+    {
+      "tag": "terrain",
+      "patterns": ["what's the terrain"],
+      "responses": {
+        "singular": ["{name}'s terrain is {response}"],
+        "multiple": ["{name}'s terrains are {response}"]
+      }
+    },
+    {
+      "tag": "diameter",
+      "patterns": ["what's the diameter"],
+      "responses": {
+        "singular": ["{name}'s diameter is {response}"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "gravity",
+      "patterns": ["what's the gravity"],
+      "responses": {
+        "singular": ["{name}'s gravity is {response}"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "orbital_period",
+      "patterns": ["what's the orbital period"],
+      "responses": {
+        "singular": ["{name}'s orbital period is {response} days"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "rotation_period",
+      "patterns": ["what's the rotation period"],
+      "responses": {
+        "singular": ["{name}'s rotation period is {response} hours"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "population",
+      "patterns": ["what's the population", "how many sentient beings inhabit"],
+      "responses": {
+        "singular": [
+          "{name}'s population consists in {response} sentient beings",
+          "{response} sentient beings inhabit {name}"
+        ],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "residents",
+      "patterns": ["who lives", "who resids"],
+      "responses": {
+        "singular": [
+          "{name}'s resident is {response}",
+          "{response} lives in {name}",
+          "{response} resids in {name}"
+        ],
+        "multiple": [
+          "{name}'s resident are {response}",
+          "{response} live in {name}",
+          "{response} resid in {name}"
+        ]
+      }
+    },
+    {
+      "tag": "surface_water",
+      "patterns": ["what's percentage of water", "how much water"],
+      "responses": {
+        "singular": ["{name}'s percentage of water is {response} percent"],
+        "multiple": []
+      }
+    },
+    {
+      "tag": "apologies",
+      "patterns": [
+        "I'm sorry",
+        "Sorry",
+        "Apologies",
+        "My apologies",
+        "I apologize",
+        "Forgive me",
+        "I'm really sorry"
+      ],
+      "responses": {
+        "singular": [
+          "I apologize, our dataset doesn't that information about the character {name}"
+        ],
+        "multiple": [
+          "I apologize for any inconvenience caused.",
+          "I'm sorry if there was any misunderstanding.",
+          "I'm sorry for the confusion.",
+          "I apologize for the inconvenience.",
+          "I'm sorry for any inconvenience caused."
+        ]
+      }
+    },
+    {
+      "tag": "planet_name",
+      "patterns": [
+        "What's the name of the planet?",
+        "Tell me the planet's name"
+      ],
+      "responses": {
+        "singular": ["The name of the planet is {name}"],
+        "multiple": ["The names of the planets are {response}"]
+      }
+    },
+    {
+      "tag": "rotation_period",
+      "patterns": [
+        "How long is a day on the planet?",
+        "What's the rotation period of the planet?"
+      ],
+      "responses": {
+        "singular": [
+          "The planet {name} has a rotation period of {response} hours"
+        ],
+        "multiple": ["The planets have rotation periods of {response} hours"]
+      }
+    },
+    {
+      "tag": "orbital_period",
+      "patterns": [
+        "How long is a year on the planet?",
+        "What's the orbital period of the planet?"
+      ],
+      "responses": {
+        "singular": [
+          "The planet has an orbital period of {response} days"
+        ],
+        "multiple": ["The planets have orbital periods of {response} days"]
+      }
+    },
+    {
+      "tag": "diameter",
+      "patterns": ["What's the diameter of the planet?"],
+      "responses": {
+        "singular": ["The planet has a diameter of {response} kilometers"],
+        "multiple": ["The planets have diameters of {response} kilometers"]
+      }
+    },
+    {
+      "tag": "climate",
+      "patterns": [
+        "What's the climate like on the planet?",
+        "Tell me about the planet's climate"
+      ],
+      "responses": {
+        "singular": ["The climate on the planet is {response}"],
+        "multiple": ["The climates of the planets are {response}"]
+      }
+    },
+    {
+      "tag": "gravity",
+      "patterns": [
+        "What's the gravity on the planet?",
+        "Tell me about the planet's gravity"
+      ],
+      "responses": {
+        "singular": ["The gravity on the planet is {response}"],
+        "multiple": ["The gravities of the planets are {response}"]
+      }
+    },
+    {
+      "tag": "terrain",
+      "patterns": [
+        "What's the terrain like on the planet?",
+        "Tell me about the planet's terrain"
+      ],
+      "responses": {
+        "singular": ["The terrain on the planet includes {response}"],
+        "multiple": ["The terrains of the planets are {response}"]
+      }
+    },
+    {
+      "tag": "surface_water",
+      "patterns": [
+        "Is there surface water on the planet?",
+        "Tell me about the planet's surface water"
+      ],
+      "responses": {
+        "singular": [
+          "The presence of surface water on the planet is {response}"
+        ],
+        "multiple": [
+          "The presence of surface water on the planets is {response}"
+        ]
+      }
+    },
+    {
+      "tag": "population",
+      "patterns": [
+        "What's the population of the planet?",
+        "Tell me about the planet's population"
+      ],
+      "responses": {
+        "singular": [
+          "The population of the planet is approximately {response}"
+        ],
+        "multiple": ["The populations of the planets are {response}"]
+      }
+    },
+    {
+      "tag": "planet_films",
+      "patterns": [
+        "Which films feature the planet?",
+        "Tell me about the films that include the planet"
+      ],
+      "responses": {
+        "singular": ["The planet appears in the following films: {response}"],
+        "multiple": ["The planets appear in the following films: {response}"]
+      }
+    },
+    {
+      "tag": "residents",
+      "patterns": [
+        "Who are the residents of the planet?",
+        "Tell me about the planet's residents"
+      ],
+      "responses": {
+        "singular": ["The residents of the planet are: {response}"],
+        "multiple": ["The residents of the planets are: {response}"]
+      }
+    }
+  ]
+}

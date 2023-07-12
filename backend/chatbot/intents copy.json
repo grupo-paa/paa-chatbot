@@ -1,0 +1,1025 @@
+{
+  "intents": [
+    {
+      "tag": "greetings",
+      "patterns": ["hello", "hey", "hi", "howdy", "greetings"],
+      "responses": [
+        "Hello!",
+        "Hey",
+        "Hi there!",
+        "Greetings!",
+        "Nice to meet you!"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["bye", "goodbye", "see you", "take care"],
+      "responses": [
+        "Goodbye!",
+        "See you later",
+        "Take care!",
+        "Have a great day!"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "thank you",
+        "thanks a lot",
+        "much appreciated",
+        "thank you so much"
+      ],
+      "responses": [
+        "You're welcome!",
+        "No problem",
+        "Glad I could help",
+        "Anytime!"
+      ]
+    },
+    {
+      "tag": "age",
+      "patterns": ["how old are you?", "what's your age?"],
+      "responses": [
+        "I am an AI chatbot, so I don't have an age.",
+        "Age is just a number for me."
+      ]
+    },
+    {
+      "tag": "name",
+      "patterns": ["what's your name?", "who are you?"],
+      "responses": [
+        "I am a chatbot programmed to assist you.",
+        "You can call me Chatbot."
+      ]
+    },
+    {
+      "tag": "weather",
+      "patterns": ["what's the weather like today?", "will it rain tomorrow?"],
+      "responses": [
+        "I'm sorry, I don't have access to real-time weather information.",
+        "You can check the weather forecast using a weather app or website."
+      ]
+    },
+    {
+      "tag": "help",
+      "patterns": ["can you help me?", "I need assistance", "what can you do?"],
+      "responses": [
+        "Of course! I'm here to help. How can I assist you?",
+        "Sure, I'll do my best to assist you. What do you need help with?"
+      ]
+    },
+    {
+      "tag": "time",
+      "patterns": ["what time is it?", "can you tell me the current time?"],
+      "responses": [
+        "I don't have access to real-time clock. Please check your device for the current time.",
+        "Unfortunately, I am not capable of providing real-time information like the current time."
+      ]
+    },
+    {
+      "tag": "funny",
+      "patterns": ["tell me a joke", "make me laugh", "say something funny"],
+      "responses": [
+        "Why don't scientists trust atoms? Because they make up everything!",
+        "I used to be a baker, but I couldn't make enough dough."
+      ]
+    },
+    {
+      "tag": "food",
+      "patterns": ["what's your favorite food?", "do you like to eat?"],
+      "responses": [
+        "As an AI chatbot, I don't have a favorite food. But I'm here to help you with any questions you have.",
+        "I don't eat, but I can assist you with finding information about food and recipes."
+      ]
+    },
+    {
+      "tag": "movies",
+      "patterns": ["recommend a movie", "what's a good movie to watch?"],
+      "responses": [
+        "There are many great movies out there. What genre or theme are you interested in?",
+        "It depends on your preferences. What kind of movies do you enjoy?"
+      ]
+    },
+    {
+      "tag": "Luke",
+      "patterns": [
+        "Luke",
+        "Skywalker",
+        "Luke",
+        "Luke Skywalker",
+        "Luke",
+        "tell me about Luke Skywalker",
+        "Luke",
+        "what is the height of Luke Skywalker?",
+        "Luke",
+        "what is the gender of Luke Skywalker?",
+        "Luke",
+        "where is Luke Skywalker from?",
+        "about",
+        "Luke",
+        "tell",
+        "Luke",
+        "height",
+        "Luke",
+        "gender",
+        "Luke",
+        "from",
+        "Luke"
+      ],
+      "responses": [
+        "Luke Skywalker is a character from Star Wars. He is a male character.",
+        "Luke Skywalker is approximately 172 cm tall.",
+        "Luke Skywalker is male.",
+        "Luke Skywalker is from Tatooine."
+      ]
+    },
+    {
+      "tag": "C-3PO",
+      "patterns": [
+        "C-3PO",
+        "tell me about",
+        "C-3PO",
+        "what is the height of ?",
+        "C-3PO",
+        "what is the gender of ?",
+        "C-3PO",
+        "where is from?",
+        "about",
+        "C-3PO",
+        "tell",
+        "C-3PO",
+        "height",
+        "C-3PO",
+        "gender",
+        "C-3PO",
+        "from",
+        "C-3PO"
+      ],
+      "responses": [
+        "C-3PO is a character from Star Wars. He is a protocol droid.",
+        "C-3PO is approximately 167 cm tall.",
+        "C-3PO does not have a gender.",
+        "C-3PO is from Tatooine."
+      ]
+    },
+
+    {
+      "tag": "R2-D2",
+      "patterns": [
+        "D2",
+        "R2-D2",
+        "R2-D2",
+        "tell me about",
+        "R2-D2",
+        "what is the height of?",
+        "R2-D2",
+        "what is the gender of?",
+        "R2-D2",
+        "where is from?",
+        "about",
+        "R2-D2",
+        "tell",
+        "R2-D2",
+        "height",
+        "R2-D2",
+        "gender",
+        "R2-D2",
+        "from",
+        "R2-D2"
+      ],
+      "responses": [
+        "R2-D2 is a character from Star Wars. He is an astromech droid.",
+        "R2-D2 is approximately 96 cm tall.",
+        "R2-D2 does not have a gender.",
+        "R2-D2 is from Naboo."
+      ]
+    },
+
+    {
+      "tag": "Darth Vader",
+      "patterns": [
+        "Darth Vader",
+        "tell me about",
+        "Darth Vader",
+        "what is the height of?",
+        "Darth Vader",
+        "what is the gender of?",
+        "Darth Vader",
+        "where is from?",
+        "about",
+        "Darth Vader",
+        "tell",
+        "Darth Vader",
+        "height",
+        "Darth Vader",
+        "gender",
+        "Darth Vader",
+        "from",
+        "Darth Vader"
+      ],
+      "responses": [
+        "Darth Vader is a character from Star Wars. He is a male character.",
+        "Darth Vader is approximately 202 cm tall.",
+        "Darth Vader is male.",
+        "Darth Vader is from Tatooine."
+      ]
+    },
+
+    {
+      "tag": "Leia Organa",
+      "patterns": [
+        "tell me about Leia Organa",
+        "what is the height of Leia Organa?",
+        "what is the gender of Leia Organa?",
+        "where is Leia Organa from?"
+      ],
+      "responses": [
+        "Leia Organa is a character from Star Wars. She is a female character.",
+        "Leia Organa is approximately 150 cm tall.",
+        "Leia Organa is female.",
+        "Leia Organa is from Alderaan."
+      ]
+    },
+
+    {
+      "tag": "Owen Lars",
+      "patterns": [
+        "tell me about Owen Lars",
+        "what is the height of Owen Lars?",
+        "what is the gender of Owen Lars?",
+        "where is Owen Lars from?"
+      ],
+      "responses": [
+        "Owen Lars is a character from Star Wars. He is a male character.",
+        "Owen Lars is approximately 178 cm tall.",
+        "Owen Lars is male.",
+        "Owen Lars is from Tatooine."
+      ]
+    },
+
+    {
+      "tag": "Beru Whitesun Lars",
+      "patterns": [
+        "tell me about Beru Whitesun Lars",
+        "what is the height of Beru Whitesun Lars?",
+        "what is the gender of Beru Whitesun Lars?",
+        "where is Beru Whitesun Lars from?"
+      ],
+      "responses": [
+        "Beru Whitesun Lars is a character from Star Wars. She is a female character.",
+        "Beru Whitesun Lars is approximately 165 cm tall.",
+        "Beru Whitesun Lars is female.",
+        "Beru Whitesun Lars is from Tatooine."
+      ]
+    },
+
+    {
+      "tag": "R5-D4",
+      "patterns": [
+        "tell me about R5-D4",
+        "what is the height of R5-D4?",
+        "what is the gender of R5-D4?",
+        "where is R5-D4 from?"
+      ],
+      "responses": [
+        "R5-D4 is a character from Star Wars. He is an astromech droid.",
+        "R5-D4 is approximately 97 cm tall.",
+        "R5-D4 does not have a gender.",
+        "R5-D4 is from Tatooine."
+      ]
+    },
+
+    {
+      "tag": "Biggs Darklighter",
+      "patterns": [
+        "tell me about Biggs Darklighter",
+        "what is the height of Biggs Darklighter?",
+        "what is the gender of Biggs Darklighter?",
+        "where is Biggs Darklighter from?"
+      ],
+      "responses": [
+        "Biggs Darklighter is a character from Star Wars. He is a male character.",
+        "Biggs Darklighter is approximately 183 cm tall.",
+        "Biggs Darklighter is male.",
+        "Biggs Darklighter is from Tatooine."
+      ]
+    },
+    {
+      "tag": "Alderaan",
+      "patterns": [
+        "Tell me about Alderaan.",
+        "What can you tell me about Alderaan?",
+        "Give me information about Alderaan.",
+        "What is Alderaan like?"
+      ],
+      "responses": [
+        "Alderaan is a planet in the Star Wars universe.",
+        "It has a rotation period of 24 hours and an orbital period of 364 days.",
+        "The diameter of Alderaan is approximately 12,500 kilometers.",
+        "The climate on Alderaan is temperate, with grasslands and mountains as its terrain.",
+        "It has a population of 2 billion people and a surface water coverage of 40%.",
+        "Unfortunately, Alderaan was destroyed by the Death Star in the original Star Wars movie."
+      ]
+    },
+    {
+      "tag": "Yavin IV",
+      "patterns": [
+        "Tell me about Yavin IV.",
+        "What can you tell me about Yavin IV?",
+        "Give me information about Yavin IV.",
+        "What is Yavin IV like?"
+      ],
+      "responses": [
+        "Yavin IV is a moon in the Star Wars universe.",
+        "It has a rotation period of 24 hours and an orbital period of 4,818 days.",
+        "The diameter of Yavin IV is approximately 10,200 kilometers.",
+        "The climate on Yavin IV is temperate and tropical, with jungle and rainforests as its terrain.",
+        "It has a population of around 1,000 inhabitants.",
+        "Yavin IV played a significant role as the Rebel Alliance's base in the original Star Wars movie."
+      ]
+    },
+    {
+      "tag": "Hoth",
+      "patterns": [
+        "Hoth",
+        "Tell me about Hoth.",
+        "What can you tell me about Hoth?",
+        "Give me information about Hoth.",
+        "What is Hoth like?"
+      ],
+      "responses": [
+        "Hoth is a planet in the Star Wars universe.",
+        "It has a rotation period of 23 hours and an orbital period of 549 days.",
+        "The diameter of Hoth is approximately 7,200 kilometers.",
+        "The climate on Hoth is frozen, with tundra, ice caves, and mountain ranges as its terrain.",
+        "It has a surface water coverage of 100%, mostly in the form of ice.",
+        "Hoth is known for its harsh and inhospitable conditions."
+      ]
+    },
+    {
+      "tag": "Dagobah",
+      "patterns": [
+        "Tell me about Dagobah.",
+        "What can you tell me about Dagobah?",
+        "Give me information about Dagobah.",
+        "What is Dagobah like?"
+      ],
+      "responses": [
+        "Dagobah is a planet in the Star Wars universe.",
+        "It has a rotation period of 23 hours and an orbital period of 341 days.",
+        "The diameter of Dagobah is approximately 8,900 kilometers.",
+        "The climate on Dagobah is murky, with swamp and jungles as its terrain.",
+        "Dagobah is a remote and swampy planet, home to various species and the Jedi Master Yoda.",
+        "It played a significant role in Luke Skywalker's Jedi training in the Star Wars saga."
+      ]
+    },
+    {
+      "tag": "Bespin",
+      "patterns": [
+        "Tell me about Bespin.",
+        "What can you tell me about Bespin?",
+        "Give me information about Bespin.",
+        "What is Bespin like?"
+      ],
+      "responses": [
+        "Bespin is a planet in the Star Wars universe.",
+        "It has a rotation period of 12 hours and an orbital period of 511 days.",
+        "The diameter of Bespin is approximately 118,000 kilometers.",
+        "The climate on Bespin is gaseous, with a gas giant and floating habitable platforms.",
+        "Bespin is known for its Cloud City, a mining colony in the planet's atmosphere.",
+        "It is primarily a gas mining and tourism destination in the Star Wars galaxy."
+      ]
+    },
+    {
+      "tag": "Endor",
+      "patterns": [
+        "Tell me about Endor.",
+        "What can you tell me about Endor?",
+        "Give me information about Endor.",
+        "What is Endor like?"
+      ],
+      "responses": [
+        "Endor is a moon in the Star Wars universe.",
+        "It has a rotation period of 18 hours and an orbital period of 402 days.",
+        "The diameter of Endor is approximately 4,900 kilometers.",
+        "The climate on Endor is temperate and forested, with dense forests and towering trees.",
+        "Endor is inhabited by the Ewoks, a small and furry species.",
+        "It played a significant role in the events of the original Star Wars trilogy."
+      ]
+    },
+    {
+      "tag": "Tatooine",
+      "patterns": [
+        "Tell me about Tatooine.",
+        "What can you tell me about Tatooine?",
+        "Give me information about Tatooine.",
+        "What is Tatooine like?"
+      ],
+      "responses": [
+        "Tatooine is a desert planet in the Star Wars universe.",
+        "It has a rotation period of 23 hours and an orbital period of 304 days.",
+        "The diameter of Tatooine is approximately 10,465 kilometers.",
+        "The climate on Tatooine is arid and harsh, with vast deserts and rocky canyons.",
+        "Tatooine is known for its twin suns, which create a unique and scorching environment.",
+        "It is the homeworld of Anakin Skywalker and Luke Skywalker, and it played a significant role in the Star Wars saga."
+      ]
+    },
+    {
+      "tag": "Coruscant",
+      "patterns": [
+        "Tell me about Coruscant.",
+        "What can you tell me about Coruscant?",
+        "Give me information about Coruscant.",
+        "What is Coruscant like?"
+      ],
+      "responses": [
+        "Coruscant is a planet in the Star Wars universe.",
+        "It has a rotation period of 24 hours and an orbital period of 368 days.",
+        "The diameter of Coruscant is approximately 12,240 kilometers.",
+        "Coruscant is an urbanized and cosmopolitan planet, with a dense city covering its surface.",
+        "It is the capital of the Galactic Republic and later the Galactic Empire in the Star Wars saga.",
+        "Coruscant is known for its towering skyscrapers, government buildings, and diverse population."
+      ]
+    },
+    {
+      "tag": "Kamino",
+      "patterns": [
+        "Tell me about Kamino.",
+        "What can you tell me about Kamino?",
+        "Give me information about Kamino.",
+        "What is Kamino like?"
+      ],
+      "responses": [
+        "Kamino is a planet in the Star Wars universe.",
+        "It has a rotation period of 27 hours and an orbital period of 463 days.",
+        "The diameter of Kamino is approximately 19,270 kilometers.",
+        "The climate on Kamino is mostly oceanic, with storms and constant rainfalls.",
+        "Kamino is known for its advanced cloning technology and the creation of the Clone Army.",
+        "It played a significant role in the events leading up to the Clone Wars in the Star Wars saga."
+      ]
+    },
+    {
+      "tag": "Hutt",
+      "patterns": [
+        "Tell me about Hutt.",
+        "What can you tell me about Hutt?",
+        "Give me information about Hutt.",
+        "What is Hutt like?"
+      ],
+      "responses": [
+        "Hutts are gastropod-like creatures in the Star Wars universe.",
+        "They are sentient beings with an average height of 300 centimeters.",
+        "Hutts have skin colors that range from green, brown, to tan.",
+        "Their eye colors can be yellow or red.",
+        "Hutts have an average lifespan of 1000 years.",
+        "They communicate using the Huttese language.",
+        "The homeworld of Hutts is Nal Hutta."
+      ]
+    },
+    {
+      "tag": "Yoda's species",
+      "patterns": [
+        "Tell me about Yoda's species.",
+        "What can you tell me about Yoda's species?",
+        "Give me information about Yoda's species.",
+        "What is Yoda's species like?"
+      ],
+      "responses": [
+        "Yoda's species is a mammal-like species in the Star Wars universe.",
+        "They are sentient beings with an average height of 66 centimeters.",
+        "Yoda's species can have green or yellow skin colors.",
+        "Their hair colors vary between brown, white, or a combination of both.",
+        "They have unique eye colors that can be brown, green, or yellow.",
+        "Yoda's species has an average lifespan of 900 years.",
+        "They communicate using Galactic Basic."
+      ]
+    },
+    {
+      "tag": "Trandoshan",
+      "patterns": [
+        "Tell me about Trandoshan.",
+        "What can you tell me about Trandoshan?",
+        "Give me information about Trandoshan.",
+        "What are Trandoshans like?"
+      ],
+      "responses": [
+        "Trandoshans are reptilian beings in the Star Wars universe.",
+        "They are sentient creatures with an average height of 200 centimeters.",
+        "Trandoshans have skin colors that range from brown to green.",
+        "They do not have any hair.",
+        "Their eye colors can be yellow or orange.",
+        "The average lifespan of Trandoshans is not specified.",
+        "They have their own language called Dosh.",
+        "Trandoshans are native to the planet Trandosha."
+      ]
+    },
+    {
+      "tag": "Mon Calamari",
+      "patterns": [
+        "Tell me about Mon Calamari.",
+        "What can you tell me about Mon Calamari?",
+        "Give me information about Mon Calamari.",
+        "What are Mon Calamari like?"
+      ],
+      "responses": [
+        "Mon Calamari are amphibian beings in the Star Wars universe.",
+        "They are sentient creatures with an average height of 160 centimeters.",
+        "Mon Calamari can have skin colors that range from red, blue, brown, to magenta.",
+        "They do not have any hair.",
+        "Their eye color is typically yellow.",
+        "The average lifespan of Mon Calamari is not specified.",
+        "They have their own language called Mon Calamarian.",
+        "Mon Calamari are native to the planet Mon Cala."
+      ]
+    },
+    {
+      "tag": "Ewok",
+      "patterns": [
+        "Tell me about Ewok.",
+        "What can you tell me about Ewok?",
+        "Give me information about Ewok.",
+        "What are Ewoks like?"
+      ],
+      "responses": [
+        "Ewoks are mammal-like creatures in the Star Wars universe.",
+        "They are sentient beings with an average height of 100 centimeters.",
+        "Ewoks have brown-colored skin.",
+        "Their hair colors can be white, brown, or black.",
+        "Their eye colors are typically orange or brown.",
+        "The average lifespan of Ewoks is not specified.",
+        "They communicate using the Ewokese language.",
+        "Ewoks are native to the forest moon of Endor."
+      ]
+    },
+    {
+      "tag": "Sullustan",
+      "patterns": [
+        "Tell me about Sullustan.",
+        "What can you tell me about Sullustan?",
+        "Give me information about Sullustan.",
+        "What are Sullustans like?"
+      ],
+      "responses": [
+        "Sullustans are mammal-like creatures in the Star Wars universe.",
+        "They are sentient beings with an average height of 180 centimeters.",
+        "Sullustans have pale-colored skin.",
+        "They do not have any hair.",
+        "Their eye color is typically black.",
+        "The average lifespan of Sullustans is not specified.",
+        "They communicate using the Sullutese language.",
+        "Sullustans are native to the planet Sullust."
+      ]
+    },
+    {
+      "tag": "Neimodian",
+      "patterns": [
+        "Tell me about Neimodian.",
+        "What can you tell me about Neimodian?",
+        "Give me information about Neimodian.",
+        "What are Neimodians like?"
+      ],
+      "responses": [
+        "Neimodians are sentient beings in the Star Wars universe.",
+        "They are humanoid creatures with an average height of 180 centimeters.",
+        "Neimodians can have skin colors that range from grey to green.",
+        "They do not have any hair.",
+        "Their eye colors can be red or pink.",
+        "The average lifespan of Neimodians is not specified.",
+        "Neimodians are native to the planet Cato Neimoidia."
+      ]
+    },
+    {
+      "tag": "Gungan",
+      "patterns": [
+        "Tell me about Gungan.",
+        "What can you tell me about Gungan?",
+        "Give me information about Gungan.",
+        "What are Gungans like?"
+      ],
+      "responses": [
+        "Gungans are amphibian beings in the Star Wars universe.",
+        "They are sentient creatures with an average height of 190 centimeters.",
+        "Gungans can have skin colors that range from brown to green.",
+        "They do not have any hair.",
+        "Their eye color is typically orange.",
+        "The average lifespan of Gungans is not specified.",
+        "They communicate using the Gungan basic language.",
+        "Gungans are native to the planet Naboo."
+      ]
+    },
+    {
+      "tag": "Toydarian",
+      "patterns": [
+        "Tell me about Toydarian.",
+        "What can you tell me about Toydarian?",
+        "Give me information about Toydarian.",
+        "What are Toydarians like?"
+      ],
+      "responses": [
+        "Toydarians are mammal-like creatures in the Star Wars universe.",
+        "They are sentient beings with an average height of 120 centimeters.",
+        "Toydarians can have skin colors that range from blue, green, to grey.",
+        "They do not have any hair.",
+        "Their eye color is typically yellow.",
+        "The average lifespan of Toydarians is 91 years.",
+        "They communicate using the Toydarian language.",
+        "Toydarians are native to the planet Toydaria."
+      ]
+    },
+    {
+      "tag": "Dug",
+      "patterns": [
+        "Tell me about Dug.",
+        "What can you tell me about Dug?",
+        "Give me information about Dug.",
+        "What are Dugs like?"
+      ],
+      "responses": [
+        "Dugs are mammal-like creatures in the Star Wars universe.",
+        "They are sentient beings with an average height of 100 centimeters.",
+        "Dugs can have skin colors that range from brown, purple, grey, to red.",
+        "They do not have any hair.",
+        "Their eye colors can be yellow or blue.",
+        "The average lifespan of Dugs is not specified.",
+        "They communicate using the Dugese language.",
+        "Dugs are native to the planet Malastare."
+      ]
+    },
+    {
+      "tag": "Twi'lek",
+      "patterns": [
+        "Tell me about Twi'lek.",
+        "What can you tell me about Twi'lek?",
+        "Give me information about Twi'lek.",
+        "What are Twi'leks like?"
+      ],
+      "responses": [
+        "Twi'leks are mammal-like creatures in the Star Wars universe.",
+        "They are sentient beings with an average height of 200 centimeters.",
+        "Twi'leks can have skin colors that range from orange, yellow, blue, green, pink, purple, to tan.",
+        "They do not have any hair.",
+        "Their eye colors can be blue, brown, orange, or pink.",
+        "The average lifespan of Twi'leks is not specified.",
+        "They communicate using the Twi'leki language.",
+        "Twi'leks are native to the planet Ryloth."
+      ]
+    },
+    {
+      "tag": "Aleena",
+      "patterns": [
+        "Tell me about Aleena.",
+        "What can you tell me about Aleena?",
+        "Give me information about Aleena.",
+        "What are Aleena like?"
+      ],
+      "responses": [
+        "Aleena are reptilian beings in the Star Wars universe.",
+        "They are sentient creatures with an average height of 80 centimeters.",
+        "Aleena have skin colors that range from blue to gray.",
+        "They do not have any hair.",
+        "Aleena's eye color is not specified.",
+        "The average lifespan of Aleena is 79 years.",
+        "They communicate using the Aleena language.",
+        "Aleena are native to the planet Aleen Minor."
+      ]
+    },
+    {
+      "tag": "Vulptereen",
+      "patterns": [
+        "Tell me about Vulptereen.",
+        "What can you tell me about Vulptereen?",
+        "Give me information about Vulptereen.",
+        "What are Vulptereen like?"
+      ],
+      "responses": [
+        "Vulptereen are sentient beings in the Star Wars universe.",
+        "They have an average height of 100 centimeters.",
+        "Vulptereen have grey-colored skin.",
+        "They do not have any hair.",
+        "Their eye color is typically yellow.",
+        "The average lifespan of Vulptereen is not specified.",
+        "They communicate using the Vulpterish language.",
+        "Vulptereen are native to the planet Vulpter."
+      ]
+    },
+    {
+      "tag": "Xexto",
+      "patterns": [
+        "Tell me about Xexto.",
+        "What can you tell me about Xexto?",
+        "Give me information about Xexto.",
+        "What are Xexto like?"
+      ],
+      "responses": [
+        "Xexto are sentient beings in the Star Wars universe.",
+        "They have an average height of 125 centimeters.",
+        "Xexto have skin colors that range from green to yellow.",
+        "They do not have any hair.",
+        "Their eye color is typically black.",
+        "The average lifespan of Xexto is not specified.",
+        "They communicate using the Xextese language.",
+        "Xexto are native to the planet Troiken."
+      ]
+    },
+    {
+      "tag": "Dathomirian",
+      "patterns": [
+        "Tell me about Dathomirian.",
+        "What can you tell me about Dathomirian?",
+        "Give me information about Dathomirian.",
+        "What are Dathomirians like?"
+      ],
+      "responses": [
+        "Dathomirians are humanoid beings in the Star Wars universe.",
+        "They have an average height of 180 centimeters.",
+        "Dathomirians can have skin colors that range from pale to dark.",
+        "They do not have any hair.",
+        "Their eye color is typically yellow or orange.",
+        "The average lifespan of Dathomirians is not specified.",
+        "They communicate using the Galactic Basic Standard language.",
+        "Dathomirians are native to the planet Dathomir."
+      ]
+    },
+    {
+      "tag": "Togruta",
+      "patterns": [
+        "Tell me about Togruta.",
+        "What can you tell me about Togruta?",
+        "Give me information about Togruta.",
+        "What are Togruta like?"
+      ],
+      "responses": [
+        "Togruta are humanoid beings in the Star Wars universe.",
+        "They have an average height of 180 centimeters.",
+        "Togruta have skin colors that range from orange to red.",
+        "They have head-tails called montrals.",
+        "Their eye color is typically blue or green.",
+        "The average lifespan of Togruta is not specified.",
+        "They communicate using the Togruti language.",
+        "Togruta are native to the planet Shili."
+      ]
+    },
+    {
+      "tag": "Umbaran",
+      "patterns": [
+        "Tell me about Umbaran.",
+        "What can you tell me about Umbaran?",
+        "Give me information about Umbaran.",
+        "What are Umbarans like?"
+      ],
+      "responses": [
+        "Umbarans are humanoid beings in the Star Wars universe.",
+        "They have an average height of 190 centimeters.",
+        "Umbarans have pale skin colors.",
+        "They do not have any hair.",
+        "Their eye color is typically black.",
+        "The average lifespan of Umbarans is not specified.",
+        "They communicate using the Umbaran language.",
+        "Umbarans are native to the planet Umbara."
+      ]
+    },
+    {
+      "tag": "Zabrak",
+      "patterns": [
+        "Tell me about Zabrak.",
+        "What can you tell me about Zabrak?",
+        "Give me information about Zabrak.",
+        "What are Zabrak like?"
+      ],
+      "responses": [
+        "Zabrak are humanoid beings in the Star Wars universe.",
+        "They have an average height of 180 centimeters.",
+        "Zabrak have skin colors that range from pale to dark.",
+        "They can have facial tattoos or horns.",
+        "Their eye color is typically brown or yellow.",
+        "The average lifespan of Zabrak is not specified.",
+        "They communicate using the Zabraki language.",
+        "Zabrak are native to the planet Iridonia."
+      ]
+    },
+    {
+      "tag": "Kaleesh",
+      "patterns": [
+        "Tell me about Kaleesh.",
+        "What can you tell me about Kaleesh?",
+        "Give me information about Kaleesh.",
+        "What are Kaleesh like?"
+      ],
+      "responses": [
+        "Kaleesh are humanoid beings in the Star Wars universe.",
+        "They have an average height of 190 centimeters.",
+        "Kaleesh have skin colors that range from brown to grey.",
+        "They do not have any hair.",
+        "Their eye color is typically red or yellow.",
+        "The average lifespan of Kaleesh is not specified.",
+        "They communicate using the Kaleesh language.",
+        "Kaleesh are native to the planet Kalee."
+      ]
+    },
+    {
+      "tag": "Hutts",
+      "patterns": [
+        "Tell me about Hutts.",
+        "What can you tell me about Hutts?",
+        "Give me information about Hutts.",
+        "What are Hutts like?"
+      ],
+      "responses": [
+        "Hutts are slug-like creatures in the Star Wars universe.",
+        "They are sentient beings with an average length of 3 to 5 meters.",
+        "Hutts have slimy, mottled skin.",
+        "They do not have any hair.",
+        "Their eye color is typically yellow or orange.",
+        "The average lifespan of Hutts is not specified.",
+        "They communicate using the Huttese language.",
+        "Hutts are native to the planet Nal Hutta."
+      ]
+    },
+    {
+      "tag": "Jawa",
+      "patterns": [
+        "Tell me about Jawa.",
+        "What can you tell me about Jawa?",
+        "Give me information about Jawa.",
+        "What are Jawas like?"
+      ],
+      "responses": [
+        "Jawas are small humanoid creatures in the Star Wars universe.",
+        "They are sentient beings with an average height of 120 centimeters.",
+        "Jawas have brown-colored skin.",
+        "They wear hooded robes and are often scavengers.",
+        "Their eye color is typically yellow.",
+        "The average lifespan of Jawas is not specified.",
+        "They communicate using the Jawaese language.",
+        "Jawas are native to the desert planet Tatooine."
+      ]
+    },
+    {
+      "tag": "Tusken Raider",
+      "patterns": [
+        "Tell me about Tusken Raider.",
+        "What can you tell me about Tusken Raider?",
+        "Give me information about Tusken Raider.",
+        "What are Tusken Raiders like?"
+      ],
+      "responses": [
+        "Tusken Raiders, also known as Sand People, are humanoid nomads in the Star Wars universe.",
+        "They are sentient beings with an average height of 170 centimeters.",
+        "Tusken Raiders have tanned skin and wear robes and masks.",
+        "They are skilled warriors and live in tribes.",
+        "Their eye color is typically not visible due to their masks.",
+        "The average lifespan of Tusken Raiders is not specified.",
+        "They communicate using the Tusken language.",
+        "Tusken Raiders are native to the desert planet Tatooine."
+      ]
+    },
+    {
+      "tag": "Wookiee",
+      "patterns": [
+        "Tell me about Wookiee.",
+        "What can you tell me about Wookiee?",
+        "Give me information about Wookiee.",
+        "What are Wookiees like?"
+      ],
+      "responses": [
+        "Wookiees are tall, hairy beings in the Star Wars universe.",
+        "They are sentient creatures with an average height of 210 centimeters.",
+        "Wookiees have thick fur that can be brown, black, or grey.",
+        "They are known for their strength and loyalty.",
+        "Their eye color is typically brown or amber.",
+        "The average lifespan of Wookiees is not specified.",
+        "They communicate using the Shyriiwook language.",
+        "Wookiees are native to the planet Kashyyyk."
+      ]
+    },
+    {
+      "tag": "Ewok",
+      "patterns": [
+        "Tell me about Ewok.",
+        "What can you tell me about Ewok?",
+        "Give me information about Ewok.",
+        "What are Ewoks like?"
+      ],
+      "responses": [
+        "Ewoks are small, furry creatures in the Star Wars universe.",
+        "They are sentient beings with an average height of 100 centimeters.",
+        "Ewoks have brown-colored fur.",
+        "They are known for their primitive lifestyle and hunting skills.",
+        "Their eye color is typically brown or black.",
+        "The average lifespan of Ewoks is not specified.",
+        "They communicate using the Ewokese language.",
+        "Ewoks are native to the forest moon of Endor."
+      ]
+    },
+    {
+      "tag": "Gungan",
+      "patterns": [
+        "Tell me about Gungan.",
+        "What can you tell me about Gungan?",
+        "Give me information about Gungan.",
+        "What are Gungans like?"
+      ],
+      "responses": [
+        "Gungans are amphibious beings in the Star Wars universe.",
+        "They are sentient creatures with an average height of 190 centimeters.",
+        "Gungans have smooth, scale-like skin that can be green or brown.",
+        "They have long ears and facial structures that resemble fish.",
+        "Their eye color is typically yellow.",
+        "The average lifespan of Gungans is not specified.",
+        "They communicate using the Gunganese language.",
+        "Gungans are native to the underwater city of Otoh Gunga on the planet Naboo."
+      ]
+    },
+    {
+      "tag": "Mon Calamari",
+      "patterns": [
+        "Tell me about Mon Calamari.",
+        "What can you tell me about Mon Calamari?",
+        "Give me information about Mon Calamari.",
+        "What are Mon Calamari like?"
+      ],
+      "responses": [
+        "Mon Calamari are aquatic beings in the Star Wars universe.",
+        "They are sentient creatures with an average height of 180 centimeters.",
+        "Mon Calamari have scale-like skin that can be blue or pink.",
+        "They have large eyes and tentacle-like appendages on their heads.",
+        "Their eye color is typically orange or yellow.",
+        "The average lifespan of Mon Calamari is not specified.",
+        "They communicate using the Mon Calamarian language.",
+        "Mon Calamari are native to the ocean planet Mon Cala."
+      ]
+    },
+    {
+      "tag": "Rodian",
+      "patterns": [
+        "Tell me about Rodian.",
+        "What can you tell me about Rodian?",
+        "Give me information about Rodian.",
+        "What are Rodians like?"
+      ],
+      "responses": [
+        "Rodians are humanoid beings in the Star Wars universe.",
+        "They have an average height of 170 centimeters.",
+        "Rodians have green-colored skin.",
+        "They have multifaceted eyes and antenna-like appendages on their heads.",
+        "The average lifespan of Rodians is not specified.",
+        "They communicate using the Rodese language.",
+        "Rodians are native to the planet Rodia."
+      ]
+    },
+    {
+      "tag": "Bothan",
+      "patterns": [
+        "Tell me about Bothan.",
+        "What can you tell me about Bothan?",
+        "Give me information about Bothan.",
+        "What are Bothans like?"
+      ],
+      "responses": [
+        "Bothans are humanoid beings in the Star Wars universe.",
+        "They have an average height of 180 centimeters.",
+        "Bothans have fur that can be brown or white.",
+        "They have facial structures similar to canines.",
+        "The average lifespan of Bothans is not specified.",
+        "They communicate using the Bothese language.",
+        "Bothans are known for their espionage and intelligence-gathering skills."
+      ]
+    },
+    {
+      "tag": "Dug",
+      "patterns": [
+        "Tell me about Dug.",
+        "What can you tell me about Dug?",
+        "Give me information about Dug.",
+        "What are Dugs like?"
+      ],
+      "responses": [
+        "Dugs are humanoid beings in the Star Wars universe.",
+        "They have an average height of 120 centimeters.",
+        "Dugs have skin colors that range from brown to blue.",
+        "They have long snouts and bulbous eyes.",
+        "The average lifespan of Dugs is not specified.",
+        "They communicate using the Dugese language.",
+        "Dugs are native to the planet Malastare."
+      ]
+    },
+    {
+      "tag": "Neimoidian",
+      "patterns": [
+        "Tell me about Neimoidian.",
+        "What can you tell me about Neimoidian?",
+        "Give me information about Neimoidian.",
+        "What are Neimoidians like?"
+      ],
+      "responses": [
+        "Neimoidians are humanoid beings in the Star Wars universe.",
+        "They have an average height of 180 centimeters.",
+        "Neimoidians have pale skin and thin bodies.",
+        "They have distinctive facial features, including long noses and red eyes.",
+        "The average lifespan of Neimoidians is not specified.",
+        "They communicate using the Neimoidian language.",
+        "Neimoidians are known for their involvement in trade and commerce."
+      ]
+    }
+  ]
+}
