@@ -5,6 +5,8 @@ import pickle
 import numpy as np
 import nltk
 import sys
+import re
+
 from nltk import ne_chunk, pos_tag, word_tokenize
 from nltk.tree import Tree
 from nltk.stem import WordNetLemmatizer
@@ -17,7 +19,7 @@ sys.path.append(parent_dir)
 from database import db
 
 names = ['luke skywalker','c-3po','darth vader','owen lars','beru whitesun lars','r5-d4','biggs darklighter','anakin skywalker','shmi skywalker','cliegg lars','r2-d2','palpatine','padmé amidala','jar jar binks','roos tarpals','rugor nass','ric olié','quarsh panaka','gregar typho', 'cordé']
-not_nouns = ['specie', 'height', 'vehicles', 'starships', 'planet', 'planets', 'day', 'population']
+not_nouns = ['specie', 'height', 'vehicles', 'starships', 'planet', 'planets', 'day', 'population', 'father']
 
 lemmatizer = WordNetLemmatizer()
 
@@ -59,7 +61,8 @@ def category_not_determined():
 def classify_noun(noun):
   similar_name = find_similar_name(noun).lower()
   print("similar name", similar_name)
-  people = db.peoples.find_one({"name": similar_name})
+  rgx = re.compile(f'{similar_name}', re.IGNORECASE)
+  people = db.peoples.find_one({"name": rgx})
   if people:
     return "peoples", similar_name
   
@@ -107,10 +110,12 @@ def get_response(intents_list, intents_json, message):
   if isinstance(noun, list):
     result_noun = noun = " ".join(noun)
     category, similar_name = classify_noun(result_noun)
-    query = { "name": similar_name }
+    rgx = re.compile(f'{similar_name}', re.IGNORECASE) 
+    query = { "name": rgx }
   else:
     category = classify_noun(noun.lower())
-    query = { "name": noun.lower() }
+    rgx = re.compile(f'{noun.lower()}', re.IGNORECASE) 
+    query = { "name": rgx }
     
   tag = intents_list[0]['intent']
   
@@ -118,7 +123,7 @@ def get_response(intents_list, intents_json, message):
     collection = db[category]
     query_res = collection.find_one(query)
     
-    if tag in [ 'vehicles', 'starships', 'films', 'species', 'residents' ]:
+    if tag in [ 'vehicles', 'starships', 'films', 'species', 'residents']:
       sub_res = []
       if tag == 'residents':
         sub_collection = db['peoples']

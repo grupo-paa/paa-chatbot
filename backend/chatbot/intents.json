@@ -221,8 +221,22 @@
       }
     },
     {
+      "tag": "father",
+      "patterns": [
+        "Who's father",
+        "Who is the father of",
+        "Who's the father of"
+      ],
+      "responses": {
+        "singular": [
+          "{name}'s father is {response}"
+        ],
+        "multiple": []
+      }
+    },
+    {
       "tag": "films",
-      "patterns": ["in what films appears", "in what movies appears"],
+      "patterns": ["in what films appears", "in what movies appears","In which films does the character appears"],
       "responses": {
         "singular": ["{name} is in {response}", "{name} appears in {response}"],
         "multiple": ["{name} is in {response}", "{name} appears in {response}"]
